@@ -1,5 +1,5 @@
 /**
- * Resonant Studio — Idea Inbox Backend
+ * Resonant Labs — Idea Inbox Backend
  * Google Apps Script — deploy as a Web App
  *
  * Setup:

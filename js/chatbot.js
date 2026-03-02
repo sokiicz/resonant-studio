@@ -141,8 +141,8 @@
 
     const payload = {
       access_key: WEB3FORMS_KEY,
-      subject: 'App idea from ' + (answers.name || 'a visitor') + ' — Resonant Studio',
-      from_name: answers.name || 'Resonant Studio visitor',
+      subject: 'App idea from ' + (answers.name || 'a visitor') + ' — Resonant Labs',
+      from_name: answers.name || 'Resonant Labs visitor',
       idea: answers.idea || '',
       problem: answers.problem || '',
       name: answers.name || 'Not given',

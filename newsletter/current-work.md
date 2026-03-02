@@ -1,4 +1,4 @@
-# Current Work — Resonant Studio Newsletter
+# Current Work — Resonant Labs Newsletter
 
 > Claude Code reads this file when composing the weekly Sunday newsletter.
 > Update this file whenever you start working on something new, ship an update, or fix a bug.
