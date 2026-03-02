@@ -190,7 +190,7 @@
         submitted = false;
         const row = document.getElementById('chatbot-input-row');
         if (row) {
-          row.innerHTML = '<p style="font-size:0.82rem;color:var(--text-4);padding:12px;">Couldn\'t send — please email me at contactme@resonantstudio.online</p>';
+          row.innerHTML = '<p style="font-size:0.82rem;color:var(--text-4);padding:12px;">Couldn\'t send — please email me at contactme@resonantlabs.online</p>';
         }
       });
   }

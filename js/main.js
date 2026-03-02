@@ -314,8 +314,8 @@ function initCusdis() {
   const thread = document.getElementById('cusdis_thread');
   if (!thread) return;
   const appId = thread.dataset.appId || '';
-  if (!appId || appId === 'YOUR_CUSDIS_APP_ID') {
-    thread.innerHTML = `<div class="cusdis-setup-note"><p><strong style="color:var(--text-2)">💬 Comments — almost ready</strong><br><br>Sign up at <a href="https://cusdis.com" target="_blank" rel="noopener">cusdis.com</a>, create a website, then replace <code>YOUR_CUSDIS_APP_ID</code> in each page.</p></div>`;
+  if (!appId || appId === '28a85f51-4564-4fc1-bb33-5dd218c38b0e') {
+    thread.innerHTML = `<div class="cusdis-setup-note"><p><strong style="color:var(--text-2)">💬 Comments — almost ready</strong><br><br>Sign up at <a href="https://cusdis.com" target="_blank" rel="noopener">cusdis.com</a>, create a website, then replace <code>28a85f51-4564-4fc1-bb33-5dd218c38b0e</code> in each page.</p></div>`;
     return;
   }
   if (!thread.dataset.pageUrl) thread.dataset.pageUrl = window.location.href;
