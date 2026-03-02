@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Journal — Resonant Studio</title>
+  <meta name="description" content="Thoughts on building apps with AI, the philosophy of open source, and the journey of creating without coding.">
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.add('js-ready');</script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M2 16 C4 8,6 8,8 16 C10 24,12 24,14 16 C16 8,18 8,20 16 C22 24,24 24,26 16 C28 8,30 8,30 16' stroke='%238b5cf6' stroke-width='2.5' stroke-linecap='round' fill='none'/></svg>">
+  <style>
+    .blog-page-content { padding: var(--space-6) 0 var(--space-7); }
+    .all-posts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: var(--space-3);
+    }
+    .featured-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: var(--space-2);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--amber);
+    }
+    .featured-label svg { color: var(--amber); }
+    .blog-categories {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: var(--space-5);
+    }
+    .category-btn {
+      padding: 6px 16px;
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 600;
+      font-family: 'Outfit', sans-serif;
+      background: var(--bg-3);
+      color: var(--text-3);
+      border: 1px solid var(--border-1);
+      cursor: pointer;
+      transition: all var(--duration);
+    }
+    .category-btn:hover, .category-btn.active {
+      background: var(--purple-dim);
+      color: var(--purple-light);
+      border-color: var(--border-accent);
+    }
+    .no-posts {
+      text-align: center;
+      padding: var(--space-7) 0;
+      color: var(--text-4);
+    }
+    .no-posts p { font-size: 1.1rem; margin-bottom: var(--space-3); }
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--border-1);
+      margin: var(--space-6) 0;
+    }
+    .posts-section-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-4);
+      margin-bottom: var(--space-4);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ======== NAVIGATION ======== -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="logo" aria-label="Resonant Studio home">
+        <svg class="logo-icon" width="32" height="28" viewBox="0 0 32 28" fill="none" aria-hidden="true">
+          <path d="M2 14 C4 6,6 6,8 14 C10 22,12 22,14 14 C16 6,18 6,20 14 C22 22,24 22,26 14 C28 6,30 6,30 14"
+                stroke="url(#logoGradB)" stroke-width="2.5" stroke-linecap="round"/>
+          <defs>
+            <linearGradient id="logoGradB" x1="2" y1="0" x2="30" y2="0">
+              <stop offset="0%" stop-color="#8b5cf6"/>
+              <stop offset="100%" stop-color="#22d3ee"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        Resonant Studio
+      </a>
+      <div class="nav-links">
+        <a href="index.html#apps">Apps</a>
+        <a href="blog.html" class="active">Blog</a>
+        <a href="index.html#about">About</a>
+        <a href="https://github.com/sokiicz" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          GitHub
+        </a>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" role="menu">
+    <a href="index.html#apps">Apps</a>
+    <a href="blog.html">Blog</a>
+    <a href="index.html#about">About</a>
+    <a href="https://github.com/sokiicz" target="_blank" rel="noopener" class="btn btn-primary">GitHub</a>
+  </div>
+
+  <!-- ======== BLOG HERO ======== -->
+  <header class="blog-page-hero" style="padding-top: calc(var(--nav-h) + var(--space-6));">
+    <div class="container">
+      <span class="badge badge-cyan" style="margin-bottom:16px; display:inline-flex;">The Journal</span>
+      <h1>Thoughts on building<br><span class="gradient-text">with AI</span></h1>
+      <p>Notes from the process — building without coding, thinking out loud about AI, and everything in between.</p>
+    </div>
+  </header>
+
+  <!-- ======== BLOG CONTENT ======== -->
+  <main class="blog-page-content">
+    <div class="container">
+
+      <!-- Category Filter -->
+      <div class="blog-categories" role="group" aria-label="Filter by category">
+        <button class="category-btn active" data-category="all">All Posts</button>
+        <button class="category-btn" data-category="thoughts">Thoughts</button>
+        <button class="category-btn" data-category="process">Process</button>
+        <button class="category-btn" data-category="philosophy">Philosophy</button>
+        <button class="category-btn" data-category="journal">Journal</button>
+      </div>
+
+      <!-- Featured Post -->
+      <article class="featured-post fade-in" aria-label="Featured post">
+        <div class="featured-post-cover blog-card-cover-bg" style="background: linear-gradient(135deg, #8b5cf6, #22d3ee); opacity: 0.85; position:relative; min-height:260px;">
+          <div style="position:absolute; top:20px; left:20px;">
+            <span class="featured-label">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              Featured
+            </span>
+          </div>
+        </div>
+        <div class="featured-post-body">
+          <div class="blog-meta">
+            <span class="badge badge-primary" style="font-size:0.75rem;">Thoughts</span>
+            <span class="blog-meta-dot"></span>
+            <span>15 February 2026</span>
+            <span class="blog-meta-dot"></span>
+            <span>5 min read</span>
+          </div>
+          <h2>
+            <a href="blog/why-ai-not-code.html" style="color:inherit;">
+              Why I'm Building Apps with AI Instead of Learning to Code
+            </a>
+          </h2>
+          <p>
+            I've always had ideas. What I lacked was the technical ability to bring them to life —
+            until Claude Code changed everything. This is the story of how a non-developer started
+            shipping apps, and why that might matter more than it sounds.
+          </p>
+          <a href="blog/why-ai-not-code.html" class="btn btn-primary" style="align-self:flex-start;">
+            Read the full story
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <hr class="section-divider">
+
+      <!-- All Posts -->
+      <p class="posts-section-title">All Posts</p>
+      <div class="all-posts-grid" id="all-posts-grid">
+
+        <!-- Post 1 -->
+        <article class="blog-card fade-in fade-in-delay-1">
+          <a href="blog/why-ai-not-code.html" class="blog-card-cover">
+            <div class="blog-card-cover-bg" style="background: linear-gradient(135deg, #8b5cf6, #22d3ee); opacity:0.85;"></div>
+            <div class="blog-card-cover-label">
+              <span class="badge badge-primary">Thoughts</span>
+            </div>
+          </a>
+          <div class="blog-card-body">
+            <div class="blog-meta">
+              <span>15 Feb 2026</span>
+              <span class="blog-meta-dot"></span>
+              <span>5 min read</span>
+            </div>
+            <h3 class="blog-card-title">
+              <a href="blog/why-ai-not-code.html">Why I'm Building Apps with AI Instead of Learning to Code</a>
+            </h3>
+            <p class="blog-card-excerpt">The story of how an idea person discovered they could ship software without ever opening a code editor.</p>
+            <div class="blog-card-footer">
+              <a href="blog/why-ai-not-code.html" class="read-more">
+                Read more
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <span class="read-time">5 min</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Post 2 -->
+        <article class="blog-card fade-in fade-in-delay-2">
+          <a href="blog/art-of-prompting.html" class="blog-card-cover">
+            <div class="blog-card-cover-bg" style="background: linear-gradient(135deg, #f59e0b, #ef4444); opacity:0.85;"></div>
+            <div class="blog-card-cover-label">
+              <span class="badge badge-amber">Process</span>
+            </div>
+          </a>
+          <div class="blog-card-body">
+            <div class="blog-meta">
+              <span>15 Feb 2026</span>
+              <span class="blog-meta-dot"></span>
+              <span>7 min read</span>
+            </div>
+            <h3 class="blog-card-title">
+              <a href="blog/art-of-prompting.html">The Art of Prompting: How I Describe My Vision to Claude</a>
+            </h3>
+            <p class="blog-card-excerpt">Talking to an AI is a skill in itself. Here's how I've learned to communicate ideas clearly enough to get exactly what I imagine.</p>
+            <div class="blog-card-footer">
+              <a href="blog/art-of-prompting.html" class="read-more">
+                Read more
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <span class="read-time">7 min</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Post 3 -->
+        <article class="blog-card fade-in fade-in-delay-3">
+          <a href="blog/open-source-and-ai.html" class="blog-card-cover">
+            <div class="blog-card-cover-bg" style="background: linear-gradient(135deg, #10b981, #3b82f6); opacity:0.85;"></div>
+            <div class="blog-card-cover-label">
+              <span class="badge badge-cyan">Philosophy</span>
+            </div>
+          </a>
+          <div class="blog-card-body">
+            <div class="blog-meta">
+              <span>28 Jan 2026</span>
+              <span class="blog-meta-dot"></span>
+              <span>4 min read</span>
+            </div>
+            <h3 class="blog-card-title">
+              <a href="blog/open-source-and-ai.html">Open Source and AI: A New Model for Sharing Software</a>
+            </h3>
+            <p class="blog-card-excerpt">If an AI wrote every line, should I charge for it? The answer felt obvious — give it all away, and let ideas multiply.</p>
+            <div class="blog-card-footer">
+              <a href="blog/open-source-and-ai.html" class="read-more">
+                Read more
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <span class="read-time">4 min</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- More posts placeholder -->
+        <article class="blog-card" style="border-style:dashed; opacity:0.4; pointer-events:none;">
+          <div class="blog-card-cover">
+            <div class="blog-card-cover-bg" style="background: var(--bg-3);"></div>
+            <div class="blog-card-cover-label">
+              <span class="badge badge-primary">Coming Soon</span>
+            </div>
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span>Soon</span></div>
+            <h3 class="blog-card-title">More posts on the way...</h3>
+            <p class="blog-card-excerpt">New articles about AI, building, and ideas are being written right now.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ======== CTA ======== -->
+  <section class="cta-section" style="padding: var(--space-7) 0;">
+    <div class="orb orb-1" aria-hidden="true"></div>
+    <div class="orb orb-2" aria-hidden="true"></div>
+    <div class="container cta-content">
+      <h2>Want to talk ideas?</h2>
+      <p>If you have thoughts about AI, creativity, or an app you'd love to see exist — I'm all ears.</p>
+      <div class="cta-buttons">
+        <a href="mailto:contactme@resonantstudio.online" class="btn btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
+          Get in Touch
+        </a>
+        <a href="index.html#apps" class="btn btn-ghost">Explore the Apps</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== FOOTER ======== -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" aria-label="Resonant Studio home">
+            <svg class="logo-icon" width="28" height="24" viewBox="0 0 32 28" fill="none" aria-hidden="true">
+              <path d="M2 14 C4 6,6 6,8 14 C10 22,12 22,14 14 C16 6,18 6,20 14 C22 22,24 22,26 14 C28 6,30 6,30 14"
+                    stroke="url(#fLGB)" stroke-width="2.5" stroke-linecap="round"/>
+              <defs>
+                <linearGradient id="fLGB" x1="2" y1="0" x2="30" y2="0">
+                  <stop offset="0%" stop-color="#8b5cf6"/>
+                  <stop offset="100%" stop-color="#22d3ee"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            Resonant Studio
+          </a>
+          <p>AI-built apps, freely shared.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="index.html#apps">All Apps</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="index.html#about">About</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://github.com/sokiicz" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://x.com" target="_blank" rel="noopener">X / Twitter</a></li>
+            <li><a href="mailto:contactme@resonantstudio.online">Email</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-built-with">Built entirely with <span>Claude Code</span> — zero lines written by hand</div>
+        <span>© 2026 Resonant Studio</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Category filter
+    document.querySelectorAll('.category-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        // Full filtering logic can be added here when real posts exist
+      });
+    });
+  </script>
+</body>
+</html>

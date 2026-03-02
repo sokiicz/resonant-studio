@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Music Mouse — Resonant Studio</title>
+  <meta name="description" content="An interactive musical canvas inspired by Laurie Spiegel's 1986 classic. Your mouse becomes an instrument.">
+  <link rel="stylesheet" href="../css/style.css">
+  <script>document.documentElement.classList.add('js-ready');</script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M2 16 C4 8,6 8,8 16 C10 24,12 24,14 16 C16 8,18 8,20 16 C22 24,24 24,26 16 C28 8,30 8,30 16' stroke='%238b5cf6' stroke-width='2.5' stroke-linecap='round' fill='none'/></svg>">
+  <style>:root{--app-from:#8b5cf6;--app-to:#22d3ee;}</style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="logo">
+        <svg class="logo-icon" width="32" height="28" viewBox="0 0 32 28" fill="none">
+          <path d="M2 14 C4 6,6 6,8 14 C10 22,12 22,14 14 C16 6,18 6,20 14 C22 22,24 22,26 14 C28 6,30 6,30 14" stroke="url(#lg1)" stroke-width="2.5" stroke-linecap="round"/>
+          <defs><linearGradient id="lg1" x1="2" y1="0" x2="30" y2="0"><stop offset="0%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#22d3ee"/></linearGradient></defs>
+        </svg>
+        Resonant Studio
+      </a>
+      <div class="nav-links">
+        <a href="../index.html#apps">Apps</a>
+        <a href="../blog.html">Blog</a>
+        <a href="../index.html#about">About</a>
+        <a href="https://github.com/sokiicz" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          GitHub
+        </a>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-menu">
+    <a href="../index.html#apps">Apps</a>
+    <a href="../blog.html">Blog</a>
+    <a href="../index.html#about">About</a>
+  </div>
+
+  <header class="app-detail-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../index.html">Home</a><span class="breadcrumb-sep">›</span>
+        <a href="../index.html#apps">Apps</a><span class="breadcrumb-sep">›</span>
+        <span>Music Mouse</span>
+      </nav>
+      <div class="app-hero-grid">
+        <div class="app-hero-info fade-in">
+          <span class="badge badge-primary" style="margin-bottom:20px;">Web App · Music</span>
+          <h1>Music Mouse</h1>
+          <p class="app-hero-tagline">Move your mouse. Make music. An interactive musical canvas inspired by Laurie Spiegel's 1986 classic.</p>
+          <div class="app-hero-actions">
+            <a href="#" class="btn btn-primary" style="opacity:0.5;pointer-events:none;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Live Demo Coming Soon
+            </a>
+            <a href="#" class="btn btn-ghost" style="opacity:0.5;pointer-events:none;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+              GitHub Coming Soon
+            </a>
+          </div>
+          <div class="app-hero-meta">
+            <span class="app-hero-meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+              3 Mar 2026
+            </span>
+            <span class="app-hero-meta-item">🤖 Built with Claude Code</span>
+            <span class="app-hero-meta-item">🌐 HTML · CSS · Web Audio</span>
+          </div>
+        </div>
+        <div class="app-preview-container fade-in fade-in-delay-2">
+          <img src="../Media/Music-mouse.png" alt="Music Mouse screenshot" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="app-tabs-section">
+    <div class="container">
+      <div class="tabs-nav">
+        <button class="tab-btn active" data-tab="tab-overview">Overview</button>
+        <button class="tab-btn" data-tab="tab-how-built">How It Was Built</button>
+        <button class="tab-btn" data-tab="tab-tech">Tech Stack</button>
+      </div>
+
+      <div class="tab-pane active" id="tab-overview">
+        <div class="content-prose fade-in">
+          <h3>What is Music Mouse?</h3>
+          <p>Music Mouse is a browser-based musical instrument where your mouse position controls what you hear. Moving left and right changes the harmonic pattern; moving up and down changes the rhythm and density of notes. It's endlessly playable and requires no musical knowledge.</p>
+          <p>The original Music Mouse was a software instrument created by composer Laurie Spiegel for the Macintosh in 1986. It was one of the first truly accessible digital instruments — the idea that anyone could make music just by moving a pointer was radical then, and still feels magical today.</p>
+          <h3>Key Features</h3>
+          <ul>
+            <li>Real-time synthesis using the Web Audio API — no samples, pure tone generation</li>
+            <li>Mouse position maps to pitch and rhythm simultaneously</li>
+            <li>Multiple scale and mode options to change the musical feel</li>
+            <li>Visual feedback showing notes being played</li>
+            <li>Works on desktop and touch devices</li>
+            <li>Zero dependencies — just open the file and play</li>
+          </ul>
+          <h3>Who is it for?</h3>
+          <p>Anyone curious about music. You don't need to know how to play an instrument. Just move your mouse around and discover what sounds good to you. It's also a great toy for kids, a meditation tool, or a creative starting point for musicians.</p>
+        </div>
+      </div>
+
+      <div class="tab-pane" id="tab-how-built">
+        <div class="content-prose fade-in">
+          <h3>The idea</h3>
+          <p>I'd always loved the concept of Laurie Spiegel's Music Mouse — the idea that an ordinary computer mouse could be a musical instrument. I wanted to see if I could bring that experience to the modern web browser, accessible to anyone with a link.</p>
+          <h3>Building it with Claude Code</h3>
+          <p>I described the concept to Claude Code: a canvas where mouse movement controls pitch and rhythm using the Web Audio API, inspired by the 1986 original. What came back was a working prototype in the first conversation. From there, it was about refinement — adding scales, improving the visual feedback, making it feel responsive and alive.</p>
+          <p>The entire project was a conversation. I never opened a code editor. I described what I wanted to hear, what I wanted to see, and Claude Code translated that into working JavaScript.</p>
+          <h3>What surprised me</h3>
+          <p>The Web Audio API is surprisingly expressive. What started as "just make sounds when I move the mouse" became a genuinely playable instrument with real musical depth. Claude Code knew the API well enough to implement things I didn't even know to ask for.</p>
+          <blockquote>"I described a feeling. An AI built the instrument that creates it."</blockquote>
+        </div>
+      </div>
+
+      <div class="tab-pane" id="tab-tech">
+        <div class="content-prose fade-in">
+          <p>Pure web platform. No frameworks, no build tools, no server needed. Open the file, play music.</p>
+          <div class="tech-stack-grid">
+            <div class="tech-item"><span class="tech-icon">🌐</span>HTML5</div>
+            <div class="tech-item"><span class="tech-icon">🎨</span>CSS3</div>
+            <div class="tech-item"><span class="tech-icon">⚡</span>Vanilla JavaScript</div>
+            <div class="tech-item"><span class="tech-icon">🔊</span>Web Audio API</div>
+            <div class="tech-item"><span class="tech-icon">🎹</span>Canvas API</div>
+            <div class="tech-item"><span class="tech-icon">🤖</span>Claude Code</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="comments-section">
+    <div class="container">
+      <h3>💬 Comments</h3>
+      <span class="comments-no-login-note">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        No account needed — just enter your name and comment
+      </span>
+      <div id="cusdis_thread"
+           data-host="https://cusdis.com"
+           data-app-id="YOUR_CUSDIS_APP_ID"
+           data-page-id="music-mouse"
+           data-theme="dark">
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="logo">
+            <svg class="logo-icon" width="28" height="24" viewBox="0 0 32 28" fill="none">
+              <path d="M2 14 C4 6,6 6,8 14 C10 22,12 22,14 14 C16 6,18 6,20 14 C22 22,24 22,26 14 C28 6,30 6,30 14" stroke="url(#flg1)" stroke-width="2.5" stroke-linecap="round"/>
+              <defs><linearGradient id="flg1" x1="2" y1="0" x2="30" y2="0"><stop offset="0%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#22d3ee"/></linearGradient></defs>
+            </svg>
+            Resonant Studio
+          </a>
+          <p>AI-built apps, freely shared.</p>
+        </div>
+        <div class="footer-col"><h4>Explore</h4><ul><li><a href="../index.html#apps">All Apps</a></li><li><a href="../blog.html">Blog</a></li><li><a href="../index.html#about">About</a></li></ul></div>
+        <div class="footer-col"><h4>Connect</h4><ul><li><a href="https://github.com/sokiicz" target="_blank" rel="noopener">GitHub</a></li><li><a href="mailto:hello@resonantstudio.dev">Email</a></li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-built-with">Built entirely with <span>Claude Code</span></div>
+        <span>© 2026 Resonant Studio</span>
+      </div>
+    </div>
+  </footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>

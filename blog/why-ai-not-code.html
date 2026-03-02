@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why I'm Building Apps with AI Instead of Learning to Code — Resonant Studio</title>
+  <meta name="description" content="The story of how a digital marketer with no coding skills started shipping real apps through AI conversation — and why that changes everything.">
+  <meta property="og:title" content="Why I'm Building Apps with AI Instead of Learning to Code">
+  <meta property="og:description" content="The story of how a digital marketer with no coding skills started shipping real apps through AI conversation.">
+  <meta property="og:type" content="article">
+  <link rel="stylesheet" href="../css/style.css">
+  <script>document.documentElement.classList.add('js-ready');</script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M2 16 C4 8,6 8,8 16 C10 24,12 24,14 16 C16 8,18 8,20 16 C22 24,24 24,26 16 C28 8,30 8,30 16' stroke='%238b5cf6' stroke-width='2.5' stroke-linecap='round' fill='none'/></svg>">
+  <style>
+    .reading-progress { position:fixed; top:0; left:0; height:3px; background:var(--grad-primary); z-index:200; transition:width 0.1s linear; width:0%; }
+  </style>
+</head>
+<body>
+
+  <div class="reading-progress" id="reading-progress" aria-hidden="true"></div>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="../index.html" class="logo" aria-label="Resonant Studio home">
+        <svg class="logo-icon" width="32" height="28" viewBox="0 0 32 28" fill="none" aria-hidden="true">
+          <path d="M2 14 C4 6,6 6,8 14 C10 22,12 22,14 14 C16 6,18 6,20 14 C22 22,24 22,26 14 C28 6,30 6,30 14" stroke="url(#lg-w1)" stroke-width="2.5" stroke-linecap="round"/>
+          <defs><linearGradient id="lg-w1" x1="2" y1="0" x2="30" y2="0"><stop offset="0%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#22d3ee"/></linearGradient></defs>
+        </svg>
+        Resonant Studio
+      </a>
+      <div class="nav-links">
+        <a href="../index.html#apps">Apps</a>
+        <a href="../blog.html" class="active">Blog</a>
+        <a href="../index.html#about">About</a>
+        <a href="https://github.com/sokiicz" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          GitHub
+        </a>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle mobile menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-menu" role="menu">
+    <a href="../index.html#apps">Apps</a>
+    <a href="../blog.html">Blog</a>
+    <a href="../index.html#about">About</a>
+  </div>
+
+  <header class="blog-post-hero" style="padding-top: calc(var(--nav-h) + var(--space-5));">
+    <div class="container" style="max-width: 900px;">
+      <nav class="breadcrumb" aria-label="Breadcrumb" style="margin-bottom:var(--space-4);">
+        <a href="../index.html">Home</a><span class="breadcrumb-sep">›</span>
+        <a href="../blog.html">Journal</a><span class="breadcrumb-sep">›</span>
+        <span>Why I'm Building Apps with AI</span>
+      </nav>
+      <div class="post-meta-header">
+        <span class="badge badge-primary">Thoughts</span>
+        <span class="blog-meta-dot"></span>
+        <span style="font-size:0.85rem; color:var(--text-4);">15 February 2026</span>
+        <span class="blog-meta-dot"></span>
+        <span style="font-size:0.85rem; color:var(--text-4);">5 min read</span>
+      </div>
+      <h1>Why I'm Building Apps with AI<br>Instead of <span class="gradient-text">Learning to Code</span></h1>
+      <p class="post-subtitle">The story of how a digital marketer with too many ideas discovered they could ship real software without ever touching a code editor — and why that changes everything.</p>
+      <div class="blog-post-cover">
+        <div style="position:absolute; inset:0; background: linear-gradient(135deg, #8b5cf6, #22d3ee); opacity:0.85;"></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container" style="max-width: 1100px;">
+    <div class="article-layout">
+      <main class="article-content" id="article-content">
+
+        <p>I've always had ideas. That's never been the problem. The problem was always the gap between "I wish this existed" and actually making it exist.</p>
+
+        <p>For years, that gap was filled by either hiring someone, convincing a developer friend to help, or simply letting the idea die. Learning to code myself always felt like a multi-year commitment — and honestly, it wasn't the code I wanted. It was the thing the code would make.</p>
+
+        <p>I'm a digital marketer. I spend my days thinking about audiences, messages, user journeys, what people need. I have a good sense of what makes something useful and what makes it feel right. What I've never had is the ability to build it myself.</p>
+
+        <h2>Then Claude Code happened</h2>
+
+        <p>I started using Claude Code on a whim. I had a small web app idea — nothing complex, just a tool I wanted for myself. I described it, conversationally, like I was explaining it to a friend who happened to be a brilliant developer.</p>
+
+        <p>An hour later, the app existed.</p>
+
+        <p>Not a prototype. Not a wireframe. A working, styled, functional application. And I hadn't typed a single line of code.</p>
+
+        <blockquote>"The most valuable skill in the AI era isn't coding — it's knowing what you want to build, and being able to describe it clearly."</blockquote>
+
+        <h2>What actually changed</h2>
+
+        <p>The bottleneck in my creative process wasn't ideas. It was implementation. Claude Code removed that bottleneck entirely. Now when I have an idea, the question is no longer "can I build this?" — it's always yes. The question becomes "should I build this? Does it solve a real problem? Will it be useful?"</p>
+
+        <p>That's a much more interesting question to spend your energy on.</p>
+
+        <p>And here's the thing: as a digital marketer, I'm actually well placed to answer it. I understand audiences. I understand user needs. I understand what makes something worth using. I was already good at the part that matters most — I just couldn't execute. Now I can.</p>
+
+        <h2>The open source decision</h2>
+
+        <p>When I started shipping apps, I faced a question I hadn't anticipated: should I charge for them? The honest answer was: no. Not because the apps aren't valuable, but because the value came from the AI that wrote them. Charging felt like claiming credit I hadn't earned.</p>
+
+        <p>So I made everything free and open source. Every app on Resonant Studio is available to use, fork, learn from, or build upon. No strings attached.</p>
+
+        <h2>What I want you to take away</h2>
+
+        <p>If you're reading this and you have ideas but no coding skills — this is your moment. The tools exist. The barrier is lower than it's ever been. You don't need to spend two years learning JavaScript. You need to learn how to describe what you want, clearly and with specificity.</p>
+
+        <p>That's it. That's the new skill. And you probably already have most of it.</p>
+
+        <p>Try Claude Code. Build something small. See what happens.</p>
+
+      </main>
+
+      <aside class="article-sidebar" aria-label="Article sidebar">
+        <div class="sidebar-card">
+          <div class="author-card">
+            <div class="author-avatar" aria-hidden="true">👋</div>
+            <div class="author-name">Resonant Studio</div>
+            <div class="author-bio">A digital marketer building apps through AI conversation. All ideas, no code. Everything free and open source.</div>
+            <a href="mailto:contactme@resonantstudio.online" style="font-size:0.82rem; color:var(--purple-light); font-weight:600;">Say hello →</a>
+          </div>
+        </div>
+        <div class="sidebar-card">
+          <h4>In this post</h4>
+          <nav class="toc-list" aria-label="Table of contents">
+            <a href="#article-content">The idea problem</a>
+            <a href="#article-content">Then Claude Code happened</a>
+            <a href="#article-content">What actually changed</a>
+            <a href="#article-content">The open source decision</a>
+            <a href="#article-content">What I want you to take away</a>
+          </nav>
+        </div>
+        <div class="sidebar-card">
+          <h4>Share</h4>
+          <div class="share-btns">
+            <button class="share-btn" data-share="twitter" aria-label="Share on X/Twitter">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              X
+            </button>
+            <button class="share-btn" data-share="copy" aria-label="Copy link">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+              Copy
+            </button>
+          </div>
+        </div>
+        <div class="sidebar-card" style="background: var(--purple-dim); border-color: rgba(139,92,246,0.25);">
+          <h4 style="color:var(--purple-light);">Build your own app</h4>
+          <p style="font-size:0.85rem; color:var(--text-3); margin-bottom:12px; line-height:1.6;">You don't need to code. Just describe what you want and let Claude Code build it.</p>
+          <a href="https://claude.ai/code" target="_blank" rel="noopener" class="btn btn-primary btn-sm" style="width:100%; justify-content:center;">Try Claude Code →</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <div class="container" style="max-width: 900px;">
+    <footer class="article-footer">
+      <div style="margin-bottom: var(--space-3);">
+        <p style="font-size:0.85rem; font-weight:600; color:var(--text-4); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:12px;">Tags</p>
+        <div class="tags-list">
+          <span class="tag">Claude Code</span><span class="tag">AI</span><span class="tag">No-Code</span><span class="tag">Open Source</span><span class="tag">Thoughts</span>
+        </div>
+      </div>
+      <div style="display:flex; gap:var(--space-2); flex-wrap:wrap; padding-top:var(--space-3); border-top: 1px solid var(--border-1);">
+        <a href="../blog.html" class="btn btn-ghost btn-sm">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          All Posts
+        </a>
+        <a href="../index.html#apps" class="btn btn-ghost btn-sm">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+          Explore Apps
+        </a>
+      </div>
+    </footer>
+  </div>
+
+  <section class="comments-section" aria-labelledby="comments-heading">
+    <div class="container" style="max-width: 900px;">
+      <h3 id="comments-heading">💬 Discussion</h3>
+      <span class="comments-no-login-note">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        No account needed — just enter your name and comment
+      </span>
+      <div id="cusdis_thread" data-host="https://cusdis.com" data-app-id="YOUR_CUSDIS_APP_ID" data-page-id="why-ai-not-code" data-theme="dark"></div>
+    </div>
+  </section>
+
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="logo">
+            <svg class="logo-icon" width="28" height="24" viewBox="0 0 32 28" fill="none" aria-hidden="true">
+              <path d="M2 14 C4 6,6 6,8 14 C10 22,12 22,14 14 C16 6,18 6,20 14 C22 22,24 22,26 14 C28 6,30 6,30 14" stroke="url(#flg-w1)" stroke-width="2.5" stroke-linecap="round"/>
+              <defs><linearGradient id="flg-w1" x1="2" y1="0" x2="30" y2="0"><stop offset="0%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#22d3ee"/></linearGradient></defs>
+            </svg>
+            Resonant Studio
+          </a>
+          <p>AI-built apps, freely shared.</p>
+        </div>
+        <div class="footer-col"><h4>Explore</h4><ul><li><a href="../index.html#apps">All Apps</a></li><li><a href="../blog.html">Blog</a></li><li><a href="../index.html#about">About</a></li></ul></div>
+        <div class="footer-col"><h4>Connect</h4><ul><li><a href="https://github.com/sokiicz" target="_blank" rel="noopener">GitHub</a></li><li><a href="mailto:contactme@resonantstudio.online">Email</a></li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-built-with">Built entirely with <span>Claude Code</span></div>
+        <span>© 2026 Resonant Studio</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

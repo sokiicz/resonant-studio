@@ -1,0 +1,24 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Claude Code local config
+.claude/
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Secrets — never commit these
+.env
+.env.*
+secrets.json
+
+# Node (if ever used)
+node_modules/
+
+# Logs
+*.log

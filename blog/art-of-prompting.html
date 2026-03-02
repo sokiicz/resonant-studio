@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Art of Prompting: How I Describe My Vision to Claude — Resonant Studio</title>
+  <meta name="description" content="Talking to an AI is a skill in itself. Here's how I've learned to communicate ideas clearly enough to get exactly what I imagine.">
+  <meta property="og:title" content="The Art of Prompting: How I Describe My Vision to Claude">
+  <meta property="og:description" content="Talking to an AI is a skill. Here's how I communicate ideas clearly enough to get exactly what I imagine.">
+  <meta property="og:type" content="article">
+  <link rel="stylesheet" href="../css/style.css">
+  <script>document.documentElement.classList.add('js-ready');</script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M2 16 C4 8,6 8,8 16 C10 24,12 24,14 16 C16 8,18 8,20 16 C22 24,24 24,26 16 C28 8,30 8,30 16' stroke='%238b5cf6' stroke-width='2.5' stroke-linecap='round' fill='none'/></svg>">
+  <style>
+    .reading-progress { position:fixed; top:0; left:0; height:3px; background:var(--grad-primary); z-index:200; transition:width 0.1s linear; width:0%; }
+  </style>
+</head>
+<body>
+
+  <div class="reading-progress" id="reading-progress" aria-hidden="true"></div>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="../index.html" class="logo" aria-label="Resonant Studio home">
+        <svg class="logo-icon" width="32" height="28" viewBox="0 0 32 28" fill="none" aria-hidden="true">
+          <path d="M2 14 C4 6,6 6,8 14 C10 22,12 22,14 14 C16 6,18 6,20 14 C22 22,24 22,26 14 C28 6,30 6,30 14" stroke="url(#lg-p1)" stroke-width="2.5" stroke-linecap="round"/>
+          <defs><linearGradient id="lg-p1" x1="2" y1="0" x2="30" y2="0"><stop offset="0%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#22d3ee"/></linearGradient></defs>
+        </svg>
+        Resonant Studio
+      </a>
+      <div class="nav-links">
+        <a href="../index.html#apps">Apps</a>
+        <a href="../blog.html" class="active">Blog</a>
+        <a href="../index.html#about">About</a>
+        <a href="https://github.com/sokiicz" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          GitHub
+        </a>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle mobile menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-menu" role="menu">
+    <a href="../index.html#apps">Apps</a>
+    <a href="../blog.html">Blog</a>
+    <a href="../index.html#about">About</a>
+  </div>
+
+  <header class="blog-post-hero" style="padding-top: calc(var(--nav-h) + var(--space-5));">
+    <div class="container" style="max-width: 900px;">
+      <nav class="breadcrumb" aria-label="Breadcrumb" style="margin-bottom:var(--space-4);">
+        <a href="../index.html">Home</a><span class="breadcrumb-sep">›</span>
+        <a href="../blog.html">Journal</a><span class="breadcrumb-sep">›</span>
+        <span>The Art of Prompting</span>
+      </nav>
+      <div class="post-meta-header">
+        <span class="badge badge-amber">Process</span>
+        <span class="blog-meta-dot"></span>
+        <span style="font-size:0.85rem; color:var(--text-4);">22 February 2026</span>
+        <span class="blog-meta-dot"></span>
+        <span style="font-size:0.85rem; color:var(--text-4);">7 min read</span>
+      </div>
+      <h1>The Art of Prompting:<br><span class="gradient-text">How I Describe My Vision</span> to Claude</h1>
+      <p class="post-subtitle">Talking to an AI is a skill in itself. After building several apps entirely through conversation, here's what I've learned about communicating ideas clearly enough to get exactly what I imagine.</p>
+      <div class="blog-post-cover">
+        <div style="position:absolute; inset:0; background: linear-gradient(135deg, #f59e0b, #ef4444); opacity:0.85;"></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container" style="max-width: 1100px;">
+    <div class="article-layout">
+      <main class="article-content" id="article-content">
+
+        <p>When I tell people I build apps by talking to an AI, the first question is usually: "But how do you tell it what you want?" It's a fair question. And it turns out the answer is more interesting than "just type stuff."</p>
+
+        <p>Over months of building — SpekPlatz, KeepAwake Pro, Music Mouse, and more — I've developed a way of thinking about prompting that makes a real difference in what comes back. It's not magic. It's just clarity.</p>
+
+        <h2>Start with the feeling, not the feature list</h2>
+
+        <p>The worst prompts I've written started with a list of technical requirements. "Build a web app with a sidebar, a map, user authentication, and a search bar." That's a spec, not a vision. What comes back tends to be technically correct but soulless.</p>
+
+        <p>The best prompts start with: "I want something that feels like..." or "The experience should be..." When I described SpekPlatz, I didn't start with the tech stack. I started with: "I want something between a note app and Google Maps — personal, curated, the feeling of a handwritten travel journal but on your phone." That orientation shapes everything that follows.</p>
+
+        <blockquote>"Good prompting is more like being a film director than a software engineer. You're describing the scene, not writing the script."</blockquote>
+
+        <h2>Be specific about what you don't want</h2>
+
+        <p>One of the most useful things I've learned: tell Claude what to avoid. "No onboarding screens," "don't use modal dialogs for this," "I want it to feel minimal — not cluttered with options." Constraints are generative. They focus the output and save rounds of "can you remove that thing."</p>
+
+        <p>I also find it helpful to reference things that already exist. "Think Notion but without the complexity." "Like iOS, where everything just works." "Like Craigslist, but designed by someone who cares." References carry a lot of information efficiently.</p>
+
+        <h2>Break it into conversations, not one big prompt</h2>
+
+        <p>The biggest mistake I see people make is trying to describe the entire app upfront. In one go. Everything they've ever wanted.</p>
+
+        <p>That rarely works well. Not because Claude can't handle complexity, but because you don't actually know exactly what you want until you start seeing options. A better approach: describe the core, see what you get, then refine from there.</p>
+
+        <p>SpekPlatz started as "a map app where I can save places." Three conversations later it had collections, community features, and a specific visual language. I couldn't have described all of that upfront — I discovered it through the process.</p>
+
+        <h2>Feedback is a superpower</h2>
+
+        <p>When something isn't quite right, don't scrap it and start over. Describe precisely what's wrong and what you'd prefer instead. "The card is too dense — I want more breathing room between the image and the text." "The color feels too cold — warmer, please." "The button is correct but it feels generic — make it more distinctive."</p>
+
+        <p>Specific, directional feedback — like giving notes to a designer — is far more effective than "I don't like this, try again."</p>
+
+        <h2>Trust the expertise you don't have</h2>
+
+        <p>Sometimes Claude will suggest something I hadn't considered. A different interaction pattern. A more elegant solution. An approach I wouldn't have known to ask for. The best thing I've learned to do: say yes, see how it feels, then decide.</p>
+
+        <p>Working with AI well means knowing when to steer and when to let it drive. It knows things about web development, about design patterns, about accessibility, that I simply don't. The collaboration works better when I'm open to being surprised.</p>
+
+        <p>The apps I'm most proud of have that quality — they're mine in vision, but better in execution than I could have specified in advance.</p>
+
+      </main>
+
+      <aside class="article-sidebar" aria-label="Article sidebar">
+        <div class="sidebar-card">
+          <div class="author-card">
+            <div class="author-avatar" aria-hidden="true">👋</div>
+            <div class="author-name">Resonant Studio</div>
+            <div class="author-bio">A digital marketer building apps through AI conversation. All ideas, no code. Everything free and open source.</div>
+            <a href="mailto:contactme@resonantstudio.online" style="font-size:0.82rem; color:var(--purple-light); font-weight:600;">Say hello →</a>
+          </div>
+        </div>
+        <div class="sidebar-card">
+          <h4>In this post</h4>
+          <nav class="toc-list" aria-label="Table of contents">
+            <a href="#article-content">Start with the feeling</a>
+            <a href="#article-content">What you don't want</a>
+            <a href="#article-content">Break it into conversations</a>
+            <a href="#article-content">Feedback is a superpower</a>
+            <a href="#article-content">Trust the expertise</a>
+          </nav>
+        </div>
+        <div class="sidebar-card">
+          <h4>Share</h4>
+          <div class="share-btns">
+            <button class="share-btn" data-share="twitter" aria-label="Share on X/Twitter">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              X
+            </button>
+            <button class="share-btn" data-share="copy" aria-label="Copy link">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+              Copy
+            </button>
+          </div>
+        </div>
+        <div class="sidebar-card" style="background: var(--purple-dim); border-color: rgba(139,92,246,0.25);">
+          <h4 style="color:var(--purple-light);">Build your own app</h4>
+          <p style="font-size:0.85rem; color:var(--text-3); margin-bottom:12px; line-height:1.6;">You don't need to code. Just describe what you want and let Claude Code build it.</p>
+          <a href="https://claude.ai/code" target="_blank" rel="noopener" class="btn btn-primary btn-sm" style="width:100%; justify-content:center;">Try Claude Code →</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <div class="container" style="max-width: 900px;">
+    <footer class="article-footer">
+      <div style="margin-bottom: var(--space-3);">
+        <p style="font-size:0.85rem; font-weight:600; color:var(--text-4); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:12px;">Tags</p>
+        <div class="tags-list">
+          <span class="tag">Prompting</span><span class="tag">Claude Code</span><span class="tag">Process</span><span class="tag">AI</span><span class="tag">Building</span>
+        </div>
+      </div>
+      <div style="display:flex; gap:var(--space-2); flex-wrap:wrap; padding-top:var(--space-3); border-top: 1px solid var(--border-1);">
+        <a href="../blog.html" class="btn btn-ghost btn-sm">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          All Posts
+        </a>
+        <a href="../index.html#apps" class="btn btn-ghost btn-sm">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+          Explore Apps
+        </a>
+      </div>
+    </footer>
+  </div>
+
+  <section class="comments-section" aria-labelledby="comments-heading">
+    <div class="container" style="max-width: 900px;">
+      <h3 id="comments-heading">💬 Discussion</h3>
+      <span class="comments-no-login-note">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        No account needed — just enter your name and comment
+      </span>
+      <div id="cusdis_thread" data-host="https://cusdis.com" data-app-id="YOUR_CUSDIS_APP_ID" data-page-id="art-of-prompting" data-theme="dark"></div>
+    </div>
+  </section>
+
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="logo">
+            <svg class="logo-icon" width="28" height="24" viewBox="0 0 32 28" fill="none" aria-hidden="true">
+              <path d="M2 14 C4 6,6 6,8 14 C10 22,12 22,14 14 C16 6,18 6,20 14 C22 22,24 22,26 14 C28 6,30 6,30 14" stroke="url(#flg-p1)" stroke-width="2.5" stroke-linecap="round"/>
+              <defs><linearGradient id="flg-p1" x1="2" y1="0" x2="30" y2="0"><stop offset="0%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#22d3ee"/></linearGradient></defs>
+            </svg>
+            Resonant Studio
+          </a>
+          <p>AI-built apps, freely shared.</p>
+        </div>
+        <div class="footer-col"><h4>Explore</h4><ul><li><a href="../index.html#apps">All Apps</a></li><li><a href="../blog.html">Blog</a></li><li><a href="../index.html#about">About</a></li></ul></div>
+        <div class="footer-col"><h4>Connect</h4><ul><li><a href="https://github.com/sokiicz" target="_blank" rel="noopener">GitHub</a></li><li><a href="mailto:contactme@resonantstudio.online">Email</a></li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-built-with">Built entirely with <span>Claude Code</span></div>
+        <span>© 2026 Resonant Studio</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>App Name — Resonant Studio</title>
+  <meta name="description" content="A short description of what this app does. Built entirely with Claude Code.">
+  <meta property="og:title" content="App Name — Resonant Studio">
+  <meta property="og:description" content="A short description of what this app does. Built entirely with Claude Code.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.add('js-ready');</script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M2 16 C4 8,6 8,8 16 C10 24,12 24,14 16 C16 8,18 8,20 16 C22 24,24 24,26 16 C28 8,30 8,30 16' stroke='%238b5cf6' stroke-width='2.5' stroke-linecap='round' fill='none'/></svg>">
+  <style>
+    /* Page-specific accent — change per-app */
+    :root {
+      --app-color-from: #8b5cf6;
+      --app-color-to: #22d3ee;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ======== NAVIGATION ======== -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="logo" aria-label="Resonant Studio home">
+        <svg class="logo-icon" width="32" height="28" viewBox="0 0 32 28" fill="none" aria-hidden="true">
+          <path d="M2 14 C4 6,6 6,8 14 C10 22,12 22,14 14 C16 6,18 6,20 14 C22 22,24 22,26 14 C28 6,30 6,30 14"
+                stroke="url(#logoGrad2)" stroke-width="2.5" stroke-linecap="round"/>
+          <defs>
+            <linearGradient id="logoGrad2" x1="2" y1="0" x2="30" y2="0">
+              <stop offset="0%" stop-color="#8b5cf6"/>
+              <stop offset="100%" stop-color="#22d3ee"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        Resonant Studio
+      </a>
+      <div class="nav-links">
+        <a href="index.html#apps">Apps</a>
+        <a href="blog.html">Blog</a>
+        <a href="index.html#about">About</a>
+        <a href="https://github.com/sokiicz" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          GitHub
+        </a>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" role="menu">
+    <a href="index.html#apps">Apps</a>
+    <a href="blog.html">Blog</a>
+    <a href="index.html#about">About</a>
+    <a href="https://github.com/sokiicz" target="_blank" rel="noopener" class="btn btn-primary">GitHub</a>
+  </div>
+
+  <!-- ======== APP HERO ======== -->
+  <header class="app-detail-hero">
+    <div class="container">
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="breadcrumb-sep" aria-hidden="true">›</span>
+        <a href="index.html#apps">Apps</a>
+        <span class="breadcrumb-sep" aria-hidden="true">›</span>
+        <span>App Name</span>
+      </nav>
+
+      <div class="app-hero-grid">
+        <!-- Info -->
+        <div class="app-hero-info fade-in">
+          <span class="badge badge-primary" style="margin-bottom:20px;">Web App</span>
+          <h1>App Name</h1>
+          <p class="app-hero-tagline">
+            A short, punchy tagline that captures the essence of what this app does in one sentence.
+          </p>
+
+          <div class="app-hero-actions">
+            <a href="#" target="_blank" rel="noopener" class="btn btn-primary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Open Live App
+            </a>
+            <a href="#" target="_blank" rel="noopener" class="btn btn-ghost">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+              View on GitHub
+            </a>
+          </div>
+
+          <div class="app-hero-meta">
+            <span class="app-hero-meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+              Built February 2025
+            </span>
+            <span class="app-hero-meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><circle cx="12" cy="17" r=".5"/></svg>
+              Built with Claude Code
+            </span>
+            <span class="app-hero-meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              HTML · CSS · JS
+            </span>
+          </div>
+        </div>
+
+        <!-- Preview -->
+        <div class="app-preview-container fade-in fade-in-delay-2" aria-label="App preview">
+          <!-- Replace this placeholder with an actual screenshot once available -->
+          <div class="placeholder-preview" style="background: linear-gradient(135deg, var(--app-color-from), var(--app-color-to));">
+            <span style="font-size:6rem;" aria-hidden="true">🎵</span>
+          </div>
+          <!-- Uncomment and fill in the real screenshot:
+          <img src="assets/screenshots/app-name.png" alt="Screenshot of App Name" loading="lazy" />
+          -->
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ======== APP TABS ======== -->
+  <section class="app-tabs-section">
+    <div class="container">
+      <div class="tabs-nav" role="tablist" aria-label="App information">
+        <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="tab-overview" data-tab="tab-overview" id="btn-overview">Overview</button>
+        <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-how-built" data-tab="tab-how-built" id="btn-how-built">How It Was Built</button>
+        <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-tech" data-tab="tab-tech" id="btn-tech">Tech Stack</button>
+      </div>
+
+      <!-- Overview Tab -->
+      <div class="tab-pane active" id="tab-overview" role="tabpanel" aria-labelledby="btn-overview">
+        <div class="content-prose fade-in">
+          <h3>What does it do?</h3>
+          <p>
+            Write a clear, engaging description of what the app does from the user's perspective.
+            What problem does it solve? What makes it interesting or useful? Keep it jargon-free
+            and focus on the experience.
+          </p>
+          <p>
+            Add a second paragraph here with more detail — specific features, use cases, or
+            the "aha moment" users have when they first try it.
+          </p>
+
+          <h3>Key Features</h3>
+          <ul>
+            <li>Feature one — describe what it does and why it's useful</li>
+            <li>Feature two — another capability worth highlighting</li>
+            <li>Feature three — something that makes this app unique</li>
+            <li>Feature four — a detail users will appreciate</li>
+          </ul>
+
+          <h3>Who is it for?</h3>
+          <p>
+            Describe the target audience or use case. Who would get the most value from this?
+            When would someone reach for this tool?
+          </p>
+        </div>
+      </div>
+
+      <!-- How It Was Built Tab -->
+      <div class="tab-pane" id="tab-how-built" role="tabpanel" aria-labelledby="btn-how-built">
+        <div class="content-prose fade-in">
+          <h3>The idea</h3>
+          <p>
+            Every app here starts the same way — with a thought like "I wish something like this existed."
+            Describe the original idea that sparked this app and why it felt worth building.
+          </p>
+
+          <h3>The conversation</h3>
+          <p>
+            This entire app was built through conversation with <strong style="color:var(--text-1)">Claude Code</strong>.
+            No code was manually written — not a single character. The process looks like this:
+          </p>
+          <ul>
+            <li>Describe the concept and desired outcome to Claude Code</li>
+            <li>Review what it builds and provide feedback</li>
+            <li>Iterate through conversation until it matches the vision</li>
+            <li>Ship it</li>
+          </ul>
+          <p>
+            The whole thing typically takes a few hours of back-and-forth. Claude Code handles
+            all the implementation details — the HTML structure, CSS styling, JavaScript logic,
+            edge cases, and even accessibility.
+          </p>
+
+          <h3>Challenges &amp; interesting moments</h3>
+          <p>
+            Share any interesting challenges that came up during the build. Did something unexpected
+            happen? Did Claude Code surprise you with a creative solution? Did you need to pivot the
+            approach mid-build? These stories are the most valuable part.
+          </p>
+
+          <h3>What I learned</h3>
+          <p>
+            Every app teaches something new — about the problem domain, about prompting, or about
+            what's possible. Write a brief reflection here.
+          </p>
+
+          <blockquote>
+            "I described what I wanted. The AI built it. The whole experience reminded me that
+            the most valuable skill in the AI era isn't coding — it's knowing what you want to build."
+          </blockquote>
+        </div>
+      </div>
+
+      <!-- Tech Stack Tab -->
+      <div class="tab-pane" id="tab-tech" role="tabpanel" aria-labelledby="btn-tech">
+        <div class="fade-in">
+          <p style="color:var(--text-3); margin-bottom:var(--space-4); max-width:600px;">
+            All apps in Resonant Studio are intentionally kept simple — no heavy frameworks,
+            no build tools, no dependencies that need maintaining. Just the web platform, used well.
+          </p>
+
+          <div class="tech-stack-grid">
+            <div class="tech-item">
+              <span class="tech-icon">🌐</span>
+              HTML5
+            </div>
+            <div class="tech-item">
+              <span class="tech-icon">🎨</span>
+              CSS3
+            </div>
+            <div class="tech-item">
+              <span class="tech-icon">⚡</span>
+              Vanilla JavaScript
+            </div>
+            <div class="tech-item">
+              <span class="tech-icon">🤖</span>
+              Claude Code
+            </div>
+            <!-- Add more as needed -->
+          </div>
+
+          <div class="content-prose" style="margin-top:var(--space-5);">
+            <h3>Why no frameworks?</h3>
+            <p>
+              Keeping things dependency-free means the apps are fast, portable, and easy to
+              understand. Anyone can open the source, read it, and understand how it works.
+              That's part of what makes them genuinely open source — not just technically,
+              but accessibly.
+            </p>
+            <h3>Source code</h3>
+            <p>
+              The full source is available on GitHub. Clone it, fork it, learn from it,
+              build on it — that's what it's there for.
+            </p>
+            <a href="#" target="_blank" rel="noopener" class="btn btn-outline" style="margin-top:8px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+              View Source on GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== COMMENTS ======== -->
+  <section class="comments-section" aria-labelledby="comments-heading">
+    <div class="container">
+      <h3 id="comments-heading">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="display:inline;vertical-align:middle;margin-right:8px;" aria-hidden="true"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        Comments
+      </h3>
+      <span class="comments-no-login-note">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        No account needed — just enter your name and comment
+      </span>
+      <!--
+        CUSDIS SETUP:
+        1. Sign up free at https://cusdis.com
+        2. Create a "website" in the dashboard — copy your App ID
+        3. Replace YOUR_CUSDIS_APP_ID with your App ID
+        4. Set data-page-id to a unique slug for this specific page
+      -->
+      <div id="cusdis_thread"
+           data-host="https://cusdis.com"
+           data-app-id="YOUR_CUSDIS_APP_ID"
+           data-page-id="app-name"
+           data-theme="dark">
+      </div>
+      <!-- Script is loaded automatically by initCusdis() in main.js -->
+    </div>
+  </section>
+
+  <!-- ======== FOOTER ======== -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" aria-label="Resonant Studio home">
+            <svg class="logo-icon" width="28" height="24" viewBox="0 0 32 28" fill="none" aria-hidden="true">
+              <path d="M2 14 C4 6,6 6,8 14 C10 22,12 22,14 14 C16 6,18 6,20 14 C22 22,24 22,26 14 C28 6,30 6,30 14"
+                    stroke="url(#fLG2)" stroke-width="2.5" stroke-linecap="round"/>
+              <defs>
+                <linearGradient id="fLG2" x1="2" y1="0" x2="30" y2="0">
+                  <stop offset="0%" stop-color="#8b5cf6"/>
+                  <stop offset="100%" stop-color="#22d3ee"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            Resonant Studio
+          </a>
+          <p>AI-built apps, freely shared. Not a single line of code written by human hands.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="index.html#apps">All Apps</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://github.com/sokiicz" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://x.com" target="_blank" rel="noopener">X / Twitter</a></li>
+            <li><a href="mailto:hello@resonantstudio.dev">Email</a></li>
+            <li><a href="https://claude.ai/code" target="_blank" rel="noopener">Try Claude Code</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-built-with">Built entirely with <span>Claude Code</span> — zero lines written by hand</div>
+        <span>© 2025 Resonant Studio — Free &amp; Open Source</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
