@@ -1081,8 +1081,18 @@ footer {
 }
 .comments-section h3 {
   font-size: 1.4rem;
-  margin-bottom: var(--space-2);
+  margin-bottom: 10px;
   color: var(--text-1);
+}
+.comments-intro {
+  font-size: 0.9rem;
+  color: var(--text-3);
+  margin-bottom: var(--space-3);
+  line-height: 1.6;
+}
+.tag {
+  text-decoration: none;
+  cursor: pointer;
 }
 .comments-no-login-note {
   display: inline-flex;

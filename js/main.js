@@ -137,7 +137,7 @@ function renderAppCards(containerId) {
           <h3 class="app-card-title">${app.name}</h3>
           <p class="app-card-desc">${app.shortDesc}</p>
           <div class="app-card-tags">
-            ${app.tags.map(t => `<span class="tag">${t}</span>`).join('')}
+            ${app.tags.map(t => `<button class="tag tag-filter-btn" onclick="filterAppsByTag('${t}')">${t}</button>`).join('')}
           </div>
           <div class="app-card-actions">
             <a href="${liveHref}" class="btn-live" ${liveAttrs} ${liveStyle}>
@@ -289,6 +289,21 @@ function initTabs() {
 }
 
 /* ============================================
+   APP TAG FILTER (clicking a tag on a card filters the tab)
+   ============================================ */
+const TAG_TO_TAB = {
+  'Web App': 'tab-web', 'Maps': 'tab-web', 'Music': 'tab-web', 'Interactive': 'tab-web', 'Community': 'tab-web',
+  'Windows': 'tab-desktop', 'Desktop': 'tab-desktop', 'Utility': 'tab-desktop',
+};
+function filterAppsByTag(tag) {
+  const tabId = TAG_TO_TAB[tag];
+  if (!tabId) return;
+  const btn = document.querySelector(`.tab-btn[data-tab="${tabId}"]`);
+  if (btn) btn.click();
+  document.getElementById('apps')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+/* ============================================
    SHARE BUTTONS
    ============================================ */
 function initShareButtons() {
@@ -314,10 +329,7 @@ function initCusdis() {
   const thread = document.getElementById('cusdis_thread');
   if (!thread) return;
   const appId = thread.dataset.appId || '';
-  if (!appId || appId === '28a85f51-4564-4fc1-bb33-5dd218c38b0e') {
-    thread.innerHTML = `<div class="cusdis-setup-note"><p><strong style="color:var(--text-2)">💬 Comments — almost ready</strong><br><br>Sign up at <a href="https://cusdis.com" target="_blank" rel="noopener">cusdis.com</a>, create a website, then replace <code>28a85f51-4564-4fc1-bb33-5dd218c38b0e</code> in each page.</p></div>`;
-    return;
-  }
+  if (!appId) return;
   if (!thread.dataset.pageUrl) thread.dataset.pageUrl = window.location.href;
   if (!thread.dataset.pageTitle) thread.dataset.pageTitle = document.title;
   const s = document.createElement('script');

@@ -135,7 +135,7 @@
       </div>
 
       <!-- Featured Post -->
-      <article class="featured-post fade-in" aria-label="Featured post">
+      <article class="featured-post fade-in" data-category="thoughts" aria-label="Featured post">
         <div class="featured-post-cover blog-card-cover-bg" style="background: linear-gradient(135deg, #8b5cf6, #22d3ee); opacity: 0.85; position:relative; min-height:260px;">
           <div style="position:absolute; top:20px; left:20px;">
             <span class="featured-label">
@@ -176,7 +176,7 @@
       <div class="all-posts-grid" id="all-posts-grid">
 
         <!-- Post 1 -->
-        <article class="blog-card fade-in fade-in-delay-1">
+        <article class="blog-card fade-in fade-in-delay-1" data-category="thoughts">
           <a href="blog/why-ai-not-code.html" class="blog-card-cover">
             <div class="blog-card-cover-bg" style="background: linear-gradient(135deg, #8b5cf6, #22d3ee); opacity:0.85;"></div>
             <div class="blog-card-cover-label">
@@ -204,7 +204,7 @@
         </article>
 
         <!-- Post 2 -->
-        <article class="blog-card fade-in fade-in-delay-2">
+        <article class="blog-card fade-in fade-in-delay-2" data-category="process">
           <a href="blog/art-of-prompting.html" class="blog-card-cover">
             <div class="blog-card-cover-bg" style="background: linear-gradient(135deg, #f59e0b, #ef4444); opacity:0.85;"></div>
             <div class="blog-card-cover-label">
@@ -232,7 +232,7 @@
         </article>
 
         <!-- Post 3 -->
-        <article class="blog-card fade-in fade-in-delay-3">
+        <article class="blog-card fade-in fade-in-delay-3" data-category="philosophy">
           <a href="blog/open-source-and-ai.html" class="blog-card-cover">
             <div class="blog-card-cover-bg" style="background: linear-gradient(135deg, #10b981, #3b82f6); opacity:0.85;"></div>
             <div class="blog-card-cover-label">
@@ -341,14 +341,26 @@
 
   <script src="js/main.js"></script>
   <script>
-    // Category filter
-    document.querySelectorAll('.category-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        // Full filtering logic can be added here when real posts exist
+    function activateCategory(cat) {
+      cat = (cat || 'all').toLowerCase().trim();
+      document.querySelectorAll('.category-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.category === cat);
       });
+      document.querySelectorAll('#all-posts-grid .blog-card').forEach(card => {
+        card.style.display = (cat === 'all' || (card.dataset.category || '') === cat) ? '' : 'none';
+      });
+      const featured = document.querySelector('.featured-post');
+      if (featured) {
+        featured.style.display = (cat === 'all' || (featured.dataset.category || '') === cat) ? '' : 'none';
+      }
+    }
+
+    document.querySelectorAll('.category-btn').forEach(btn => {
+      btn.addEventListener('click', () => activateCategory(btn.dataset.category));
     });
+
+    const params = new URLSearchParams(window.location.search);
+    activateCategory(params.get('category') || params.get('tag') || 'all');
   </script>
 </body>
 </html>
