@@ -155,151 +155,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <button class="category-btn active" data-category="all">All Posts</button>
         <button class="category-btn" data-category="thoughts">Thoughts</button>
         <button class="category-btn" data-category="process">Process</button>
+        <button class="category-btn" data-category="build">Build</button>
         <button class="category-btn" data-category="philosophy">Philosophy</button>
-        <button class="category-btn" data-category="journal">Journal</button>
       </div>
 
-      <!-- Featured Post -->
-      <article class="featured-post fade-in" data-category="thoughts" aria-label="Featured post">
-        <div class="featured-post-cover blog-card-cover-bg" style="background: linear-gradient(135deg, #8b5cf6, #22d3ee); opacity: 0.85; position:relative; min-height:260px;">
-          <div style="position:absolute; top:20px; left:20px;">
-            <span class="featured-label">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              Featured
-            </span>
-          </div>
-        </div>
-        <div class="featured-post-body">
-          <div class="blog-meta">
-            <span class="badge badge-primary" style="font-size:0.75rem;">Thoughts</span>
-            <span class="blog-meta-dot"></span>
-            <span>15 February 2026</span>
-            <span class="blog-meta-dot"></span>
-            <span>5 min read</span>
-          </div>
-          <h2>
-            <a href="blog/why-ai-not-code.html" style="color:inherit;">
-              Why I'm Building Apps with AI Instead of Learning to Code
-            </a>
-          </h2>
-          <p>
-            I've always had ideas. What I lacked was the technical ability to bring them to life —
-            until Claude Code changed everything. This is the story of how a non-developer started
-            shipping apps, and why that might matter more than it sounds.
-          </p>
-          <a href="blog/why-ai-not-code.html" class="btn btn-primary" style="align-self:flex-start;">
-            Read the full story
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </div>
-      </article>
+      <!-- Featured Post — most recent from site-data.js -->
+      <article class="featured-post fade-in" id="featured-post" aria-label="Featured post"></article>
 
       <hr class="section-divider">
 
-      <!-- All Posts -->
+      <!-- All Posts — rendered by main.js from site-data.js -->
       <p class="posts-section-title">All Posts</p>
-      <div class="all-posts-grid" id="all-posts-grid">
-
-        <!-- Post 1 -->
-        <article class="blog-card fade-in fade-in-delay-1" data-category="thoughts">
-          <a href="blog/why-ai-not-code.html" class="blog-card-cover">
-            <div class="blog-card-cover-bg" style="background: linear-gradient(135deg, #8b5cf6, #22d3ee); opacity:0.85;"></div>
-            <div class="blog-card-cover-label">
-              <span class="badge badge-primary">Thoughts</span>
-            </div>
-          </a>
-          <div class="blog-card-body">
-            <div class="blog-meta">
-              <span>15 Feb 2026</span>
-              <span class="blog-meta-dot"></span>
-              <span>5 min read</span>
-            </div>
-            <h3 class="blog-card-title">
-              <a href="blog/why-ai-not-code.html">Why I'm Building Apps with AI Instead of Learning to Code</a>
-            </h3>
-            <p class="blog-card-excerpt">The story of how an idea person discovered they could ship software without ever opening a code editor.</p>
-            <div class="blog-card-footer">
-              <a href="blog/why-ai-not-code.html" class="read-more">
-                Read more
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
-              <span class="read-time">5 min</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- Post 2 -->
-        <article class="blog-card fade-in fade-in-delay-2" data-category="process">
-          <a href="blog/art-of-prompting.html" class="blog-card-cover">
-            <div class="blog-card-cover-bg" style="background: linear-gradient(135deg, #f59e0b, #ef4444); opacity:0.85;"></div>
-            <div class="blog-card-cover-label">
-              <span class="badge badge-amber">Process</span>
-            </div>
-          </a>
-          <div class="blog-card-body">
-            <div class="blog-meta">
-              <span>15 Feb 2026</span>
-              <span class="blog-meta-dot"></span>
-              <span>7 min read</span>
-            </div>
-            <h3 class="blog-card-title">
-              <a href="blog/art-of-prompting.html">The Art of Prompting: How I Describe My Vision to Claude</a>
-            </h3>
-            <p class="blog-card-excerpt">Talking to an AI is a skill in itself. Here's how I've learned to communicate ideas clearly enough to get exactly what I imagine.</p>
-            <div class="blog-card-footer">
-              <a href="blog/art-of-prompting.html" class="read-more">
-                Read more
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
-              <span class="read-time">7 min</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- Post 3 -->
-        <article class="blog-card fade-in fade-in-delay-3" data-category="philosophy">
-          <a href="blog/open-source-and-ai.html" class="blog-card-cover">
-            <div class="blog-card-cover-bg" style="background: linear-gradient(135deg, #10b981, #3b82f6); opacity:0.85;"></div>
-            <div class="blog-card-cover-label">
-              <span class="badge badge-cyan">Philosophy</span>
-            </div>
-          </a>
-          <div class="blog-card-body">
-            <div class="blog-meta">
-              <span>28 Jan 2026</span>
-              <span class="blog-meta-dot"></span>
-              <span>4 min read</span>
-            </div>
-            <h3 class="blog-card-title">
-              <a href="blog/open-source-and-ai.html">Open Source and AI: A New Model for Sharing Software</a>
-            </h3>
-            <p class="blog-card-excerpt">If an AI wrote every line, should I charge for it? The answer felt obvious — give it all away, and let ideas multiply.</p>
-            <div class="blog-card-footer">
-              <a href="blog/open-source-and-ai.html" class="read-more">
-                Read more
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
-              <span class="read-time">4 min</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- More posts placeholder -->
-        <article class="blog-card" style="border-style:dashed; opacity:0.4; pointer-events:none;">
-          <div class="blog-card-cover">
-            <div class="blog-card-cover-bg" style="background: var(--bg-3);"></div>
-            <div class="blog-card-cover-label">
-              <span class="badge badge-primary">Coming Soon</span>
-            </div>
-          </div>
-          <div class="blog-card-body">
-            <div class="blog-meta"><span>Soon</span></div>
-            <h3 class="blog-card-title">More posts on the way...</h3>
-            <p class="blog-card-excerpt">New articles about AI, building, and ideas are being written right now.</p>
-          </div>
-        </article>
-
-      </div>
+      <div class="all-posts-grid" id="all-posts-grid"></div>
     </div>
   </main>
 
@@ -367,6 +234,40 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <script src="js/site-data.js"></script>
   <script src="js/main.js"></script>
   <script>
+    // Render featured post from first (most recent) entry in SITE_DATA
+    (function() {
+      const posts = window.SITE_DATA && window.SITE_DATA.posts;
+      if (!posts || !posts.length) return;
+      const p = posts[0];
+      const el = document.getElementById('featured-post');
+      if (!el) return;
+      el.dataset.category = (p.tag || '').toLowerCase();
+      el.innerHTML = `
+        <div class="featured-post-cover blog-card-cover-bg" style="background:linear-gradient(135deg,${p.gradientFrom},${p.gradientTo});opacity:0.85;position:relative;min-height:260px;">
+          <div style="position:absolute;top:20px;left:20px;">
+            <span class="featured-label">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              Latest
+            </span>
+          </div>
+        </div>
+        <div class="featured-post-body">
+          <div class="blog-meta">
+            <span class="badge ${p.tagClass}" style="font-size:0.75rem;">${p.tag}</span>
+            <span class="blog-meta-dot"></span>
+            <span>${p.date}</span>
+            <span class="blog-meta-dot"></span>
+            <span>${p.readTime}</span>
+          </div>
+          <h2><a href="${p.url}" style="color:inherit;">${p.title}</a></h2>
+          <p>${p.excerpt}</p>
+          <a href="${p.url}" class="btn btn-primary" style="align-self:flex-start;">
+            Read the full story
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>`;
+    })();
+
     function activateCategory(cat) {
       cat = (cat || 'all').toLowerCase().trim();
       document.querySelectorAll('.category-btn').forEach(btn => {
@@ -375,7 +276,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       document.querySelectorAll('#all-posts-grid .blog-card').forEach(card => {
         card.style.display = (cat === 'all' || (card.dataset.category || '') === cat) ? '' : 'none';
       });
-      const featured = document.querySelector('.featured-post');
+      const featured = document.getElementById('featured-post');
       if (featured) {
         featured.style.display = (cat === 'all' || (featured.dataset.category || '') === cat) ? '' : 'none';
       }

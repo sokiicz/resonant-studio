@@ -79,10 +79,10 @@
 
 /* === Reset === */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; background: var(--bg-1); }
+html { scroll-behavior: smooth; font-size: 16px; }
 body {
   font-family: 'Inter', system-ui, sans-serif;
-  background: transparent;
+  background: var(--bg-1);
   color: var(--text-2);
   line-height: 1.6;
   overflow-x: hidden;
@@ -297,6 +297,7 @@ p { line-height: 1.75; }
    ============================================ */
 .hero {
   position: relative;
+  z-index: 1;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -482,7 +483,7 @@ p { line-height: 1.75; }
 /* ============================================
    APP CARDS
    ============================================ */
-.apps-section { padding: var(--space-7) 0; }
+.apps-section { padding: var(--space-7) 0; position: relative; z-index: 1; }
 .apps-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
@@ -707,7 +708,7 @@ p { line-height: 1.75; }
 /* ============================================
    BLOG PREVIEW
    ============================================ */
-.blog-preview { padding: var(--space-7) 0; }
+.blog-preview { padding: var(--space-7) 0; position: relative; z-index: 1; }
 .blog-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -970,6 +971,8 @@ footer {
    APP DETAIL PAGE
    ============================================ */
 .app-detail-hero {
+  position: relative;
+  z-index: 1;
   padding: calc(var(--nav-h) + var(--space-6)) 0 var(--space-6);
   border-bottom: 1px solid var(--border-1);
 }
@@ -1110,6 +1113,8 @@ footer {
 .comments-section {
   padding: var(--space-6) 0;
   border-top: 1px solid var(--border-1);
+  position: relative;
+  z-index: 1;
 }
 .comments-section h3 {
   font-size: 1.4rem;
@@ -1270,6 +1275,8 @@ footer {
   padding: calc(var(--nav-h) + var(--space-5)) 0 var(--space-5);
   border-bottom: 1px solid var(--border-1);
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
 .blog-page-hero h1 { margin-bottom: var(--space-2); }
 .blog-page-hero p {
@@ -1278,6 +1285,8 @@ footer {
 }
 .blog-page-content {
   padding: var(--space-6) 0;
+  position: relative;
+  z-index: 1;
 }
 .featured-post {
   background: var(--bg-card);
@@ -1335,6 +1344,8 @@ footer {
    BLOG POST PAGE
    ============================================ */
 .blog-post-hero {
+  position: relative;
+  z-index: 1;
   padding: calc(var(--nav-h) + var(--space-5)) 0 var(--space-5);
   border-bottom: 1px solid var(--border-1);
 }
@@ -1914,6 +1925,11 @@ footer {
 .chatbot-send-final:hover { opacity: 0.9; }
 .chatbot-send-final:disabled { opacity: 0.5; cursor: not-allowed; }
 
+/* Ensure all major content sections paint above the fixed bg-orbs (z-index:0) */
+.article-layout,
+.app-detail-layout,
+.article-footer { position: relative; z-index: 1; }
+
 /* ============================================
    BACKGROUND AMBIENT ORBS
    Each orb is its own element so it can independently
@@ -1922,7 +1938,7 @@ footer {
 .bg-orb {
   position: fixed;
   pointer-events: none;
-  z-index: -1;
+  z-index: 0;
   border-radius: 50%;
   filter: blur(90px);
   will-change: transform, opacity;

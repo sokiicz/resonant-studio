@@ -70,18 +70,15 @@ function renderAppCards(containerId) {
 /* ============================================
    RENDER: BLOG PREVIEW
    ============================================ */
-function renderBlogPreview(containerId) {
-  const container = document.getElementById(containerId);
-  if (!container) return;
-
-  container.innerHTML = BLOG_POSTS.map((post, i) => `
-    <article class="blog-card fade-in fade-in-delay-${i + 1}">
-      <div class="blog-card-cover">
+function blogCardHTML(post, i, delay) {
+  return `
+    <article class="blog-card fade-in fade-in-delay-${delay || (i + 1)}" data-category="${(post.tag || '').toLowerCase()}">
+      <a href="${post.url}" class="blog-card-cover">
         <div class="blog-card-cover-bg" style="background:linear-gradient(135deg,${post.gradientFrom},${post.gradientTo});opacity:0.85;position:absolute;inset:0;"></div>
         <div class="blog-card-cover-label">
           <span class="badge ${post.tagClass}">${post.tag}</span>
         </div>
-      </div>
+      </a>
       <div class="blog-card-body">
         <div class="blog-meta">
           <span>${post.date}</span>
@@ -98,7 +95,20 @@ function renderBlogPreview(containerId) {
           <span class="read-time">${post.readTime}</span>
         </div>
       </div>
-    </article>`).join('');
+    </article>`;
+}
+
+function renderBlogPreview(containerId) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  // Show only the 3 most recent posts on the main page
+  container.innerHTML = BLOG_POSTS.slice(0, 3).map((post, i) => blogCardHTML(post, i)).join('');
+}
+
+function renderBlogAll(containerId) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  container.innerHTML = BLOG_POSTS.map((post, i) => blogCardHTML(post, i)).join('');
 }
 
 /* ============================================
@@ -436,6 +446,7 @@ function initBgAmbient() {
 document.addEventListener('DOMContentLoaded', () => {
   renderAppCards('apps-grid');
   renderBlogPreview('blog-preview-grid');
+  renderBlogAll('all-posts-grid');
   initNav();
   initTabs();
   initCounters();
