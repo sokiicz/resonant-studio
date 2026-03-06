@@ -1926,7 +1926,7 @@ footer {
   background: radial-gradient(circle, rgba(34,211,238,0.18) 0%, transparent 65%);
   top: -20vh;
   left: -15vw;
-  animation: orbDrift1 22s ease-in-out infinite alternate;
+  animation: orbDrift1 12s ease-in-out infinite alternate;
 }
 
 /* Purple — bottom-right, medium */
@@ -1936,8 +1936,8 @@ footer {
   background: radial-gradient(circle, rgba(139,92,246,0.16) 0%, transparent 65%);
   bottom: -18vh;
   right: -12vw;
-  animation: orbDrift2 28s ease-in-out infinite alternate;
-  animation-delay: -10s;
+  animation: orbDrift2 16s ease-in-out infinite alternate;
+  animation-delay: -7s;
 }
 
 /* Soft purple — mid-page, smaller, livelier */
@@ -1947,8 +1947,8 @@ footer {
   background: radial-gradient(circle, rgba(139,92,246,0.10) 0%, transparent 65%);
   top: 30vh;
   left: 15vw;
-  animation: orbDrift3 17s ease-in-out infinite alternate;
-  animation-delay: -5s;
+  animation: orbDrift3 9s ease-in-out infinite alternate;
+  animation-delay: -3s;
 }
 
 @keyframes orbDrift1 {
@@ -2068,5 +2068,10 @@ footer {
     transition-duration: 0.01ms !important;
   }
   .hero-scroll-hint { animation: none; }
-  .bg-orb { animation: none !important; opacity: 0.25; }
+  /* Orbs are slow decorative glow — keep them drifting even with reduced motion */
+  .bg-orb {
+    animation-duration: 60s !important;
+    animation-iteration-count: infinite !important;
+    opacity: 0.15;
+  }
 }
