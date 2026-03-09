@@ -1,0 +1,21 @@
+[
+  {
+    "id": "music-mouse",
+    "name": "Music Mouse",
+    "shortDesc": "An interactive musical canvas inspired by Laurie Spiegel's 1986 classic. Move your mouse — make music. No keyboard, no notes, no rules.",
+    "tags": ["Web App", "Music", "Interactive"],
+    "emoji": "🎵",
+    "status": "live",
+    "image": "Media/Music-mouse.png",
+    "gradientFrom": "#8b5cf6",
+    "gradientTo": "#22d3ee",
+    "githubUrl": "https://github.com/sokiicz/music-mouse",
+    "liveUrl": "https://sokiicz.github.io/Music-Mouse/",
+    "liveLabel": "Open App",
+    "detailUrl": "apps/music-mouse.html",
+    "releaseDate": "3 Mar 2026",
+    "updates": [
+      { "date": "2026-03-03", "note": "Initial release — interactive canvas, Web Audio API, Laurie Spiegel-inspired" }
+    ]
+  }
+]

@@ -29,82 +29,37 @@ window.SITE_DATA = {
       shortDesc: 'Free, open-source GDPR cookie consent widget. Drop one JS file into any site — full consent management, Google Consent Mode v2, four categories. No subscription.',
       tags: ['Open Source', 'GDPR', 'JavaScript'],
       emoji: '🍪',
+      status: 'live',
       image: 'Media/Consentkit.png',
       gradientFrom: '#10b981',
-      gradientTo:   '#06b6d4',
+      gradientTo: '#06b6d4',
       githubUrl: 'https://github.com/sokiicz/consentkit',
-      liveUrl:   'https://github.com/sokiicz/consentkit',
+      liveUrl: 'https://github.com/sokiicz/consentkit',
       liveLabel: 'Download',
       detailUrl: 'apps/consentkit.html',
       releaseDate: '6 Mar 2026',
+      updates: [
+        { date: '2026-03-06', note: 'Initial release — FTP static version, GCM v2, shadow DOM' },
+      ],
     },
     {
-      id: 'resonant-labs',
-      name: 'Resonant Labs',
-      shortDesc: 'This very website — a full portfolio site with dark space theme, animated background, tag filtering, cookie consent, comments, and newsletter. Built entirely with Claude Code.',
-      tags: ['Web App', 'Portfolio', 'Open Source'],
-      emoji: '🌊',
-      image: 'Media/ResonantLabs.png',
-      gradientFrom: '#8b5cf6',
-      gradientTo:   '#22d3ee',
-      githubUrl: 'https://github.com/sokiicz/resonant-labs',
-      liveUrl:   'https://resonantlabs.online',
-      liveLabel: 'Home',
-      detailUrl: 'apps/resonant-labs.html',
-      releaseDate: '1 Mar 2026',
-    },
-    {
-      // Internal ID — must match the filename in apps/
       id: 'music-mouse',
-
-      // Display name shown on the card
       name: 'Music Mouse',
-
-      // One-line description shown on the card
       shortDesc: 'An interactive musical canvas inspired by Laurie Spiegel\'s 1986 classic. Move your mouse — make music. No keyboard, no notes, no rules.',
-
-      // Category tags shown on the card
       tags: ['Web App', 'Music', 'Interactive'],
-
-      // Emoji shown when there is no screenshot
       emoji: '🎵',
-
-      // Path to screenshot (from the site root). Set to null if none yet.
+      status: 'live',
       image: 'Media/Music-mouse.png',
-
-      // Card gradient colours
       gradientFrom: '#8b5cf6',
-      gradientTo:   '#22d3ee',
-
-      // GitHub repo URL. Set to null if not published yet.
+      gradientTo: '#22d3ee',
       githubUrl: 'https://github.com/sokiicz/music-mouse',
-
-      // Live / download URL. Set to null if not deployed yet.
       liveUrl: 'https://sokiicz.github.io/Music-Mouse/',
-
-      // Button label when liveUrl is set: 'Open App' or 'Download'
       liveLabel: 'Open App',
-
-      // Path to the detail page (don't change this)
       detailUrl: 'apps/music-mouse.html',
-
-      // Release date shown on the card
       releaseDate: '3 Mar 2026',
-    },
-    {
-      id: 'keepawake-pro',
-      name: 'KeepAwake',
-      shortDesc: 'Keeps your Windows PC awake when you need it. Smart AFK simulation, system tray, scheduled hours, global hotkeys — invisible until needed.',
-      tags: ['Windows', 'Utility', 'Desktop'],
-      emoji: '☕',
-      image: 'Media/KeepAwake.png',
-      gradientFrom: '#f59e0b',
-      gradientTo:   '#ef4444',
-      githubUrl: 'https://github.com/sokiicz/keepawake-pro',
-      liveUrl:   'https://github.com/sokiicz/keepawake-pro',
-      liveLabel: 'Download',
-      detailUrl: 'apps/keepawake-pro.html',
-      releaseDate: '12 Feb 2026',
+      updates: [
+        { date: '2026-03-03', note: 'Initial release — interactive canvas, Web Audio API, Laurie Spiegel-inspired' },
+      ],
     },
     {
       id: 'spekplatz',
@@ -112,16 +67,96 @@ window.SITE_DATA = {
       shortDesc: 'A community map for discovering and sharing hidden spots — rooftops, viewpoints, parks, beaches, and more. Find places worth remembering.',
       tags: ['Web App', 'Community', 'Maps'],
       emoji: '📍',
+      status: 'live',
       image: 'Media/Spekplatz.png',
       gradientFrom: '#10b981',
-      gradientTo:   '#3b82f6',
+      gradientTo: '#3b82f6',
       githubUrl: 'https://github.com/sokiicz/SpekPlatz',
-      liveUrl:   'https://spekplatz.app',
+      liveUrl: 'https://spekplatz.app',
       liveLabel: 'Open App',
       detailUrl: 'apps/spekplatz.html',
       releaseDate: '20 Feb 2026',
+      updates: [
+        { date: '2026-02-20', note: 'Initial release — community map, spot submission, Firebase backend' },
+      ],
     },
-  ],
+    {
+      id: 'keepawake-pro',
+      name: 'KeepAwake',
+      shortDesc: 'Keeps your Windows PC awake when you need it. Smart AFK simulation, system tray, scheduled hours, global hotkeys — invisible until needed.',
+      tags: ['Windows', 'Utility', 'Desktop'],
+      emoji: '☕',
+      status: 'live',
+      image: 'Media/KeepAwake.png',
+      gradientFrom: '#f59e0b',
+      gradientTo: '#ef4444',
+      githubUrl: 'https://github.com/sokiicz/keepawake-pro',
+      liveUrl: 'https://github.com/sokiicz/keepawake-pro',
+      liveLabel: 'Download',
+      detailUrl: 'apps/keepawake-pro.html',
+      releaseDate: '12 Feb 2026',
+      updates: [
+        { date: '2026-02-12', note: 'Initial release — system tray, scheduled hours, global hotkeys' },
+      ],
+    },
+    {
+      id: 'daylog',
+      name: 'DayLog',
+      shortDesc: 'A private, local-first daily life tracker. Log habits, events, metrics and moods — no accounts, no cloud, no tracking. Everything stays on your device.',
+      tags: ['Web App', 'Productivity', 'Local-First'],
+      emoji: '◉',
+      status: 'wip',
+      image: null,
+      gradientFrom: '#6366f1',
+      gradientTo: '#a855f7',
+      githubUrl: null,
+      liveUrl: null,
+      liveLabel: 'Open App',
+      detailUrl: null,
+      releaseDate: null,
+      updates: [
+        { date: '2026-03-09', note: 'Project started — React 19 + Vite + IndexedDB, routing in place' },
+      ],
+    },
+    {
+      id: 'timeinvoice',
+      name: 'TimeInvoice',
+      shortDesc: 'Self-hosted time tracking and invoicing for freelancers. Log hours, manage clients and projects, generate PDF invoices with QR payment codes. Supports CZK, EUR and SEPA.',
+      tags: ['Web App', 'Productivity', 'Freelance'],
+      emoji: '⏱',
+      status: 'wip',
+      image: null,
+      gradientFrom: '#0ea5e9',
+      gradientTo: '#2563eb',
+      githubUrl: null,
+      liveUrl: null,
+      liveLabel: 'Open App',
+      detailUrl: null,
+      releaseDate: null,
+      updates: [
+        { date: '2026-03-09', note: 'Core invoicing working — PDF generation, QR payment codes (SPAYD + EPC), 29 tests passing' },
+      ],
+    },
+    {
+      id: 'undertow',
+      name: 'Undertow',
+      shortDesc: 'A music composition system for an AI that thinks in bass lines. Generates original compositions using music theory rules, harmonic progressions and rhythmic patterns.',
+      tags: ['Python', 'Music', 'AI'],
+      emoji: '🎸',
+      status: 'wip',
+      image: null,
+      gradientFrom: '#1e1b4b',
+      gradientTo: '#4c1d95',
+      githubUrl: null,
+      liveUrl: null,
+      liveLabel: 'Open App',
+      detailUrl: null,
+      releaseDate: null,
+      updates: [
+        { date: '2026-03-09', note: 'Music composition engine scaffolded — music21 + numpy, bass line generation in progress' },
+      ],
+    },
+  ]
 
   /* ----------------------------------------------------------
      BLOG POSTS
