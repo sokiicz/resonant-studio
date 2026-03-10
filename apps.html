@@ -3,37 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Journal — Resonant Labs</title>
-  <meta name="description" content="Thoughts on building apps with AI, the philosophy of open source, and the journey of creating without coding.">
+  <title>Apps — Resonant Labs</title>
+  <meta name="description" content="All apps built with AI by Resonant Labs — free, open source, and made without writing a single line of code by hand.">
   <link rel="stylesheet" href="css/style.css">
   <script>document.documentElement.classList.add('js-ready');</script>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M2 16 C4 8,6 8,8 16 C10 24,12 24,14 16 C16 8,18 8,20 16 C22 24,24 24,26 16 C28 8,30 8,30 16' stroke='%238b5cf6' stroke-width='2.5' stroke-linecap='round' fill='none'/></svg>">
   <style>
-    .blog-page-content { padding: var(--space-6) 0 var(--space-7); }
-    .all-posts-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: var(--space-3);
-    }
-    .featured-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      margin-bottom: var(--space-2);
-      font-size: 0.8rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--amber);
-    }
-    .featured-label svg { color: var(--amber); }
-    .blog-categories {
+    .apps-page-content { padding: var(--space-6) 0 var(--space-7); }
+    .apps-filter {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
       margin-bottom: var(--space-5);
     }
-    .category-btn {
+    .apps-filter-btn {
       padding: 6px 16px;
       border-radius: var(--radius-full);
       font-size: 0.85rem;
@@ -45,30 +28,25 @@
       cursor: pointer;
       transition: all var(--duration);
     }
-    .category-btn:hover, .category-btn.active {
+    .apps-filter-btn:hover, .apps-filter-btn.active {
       background: var(--purple-dim);
       color: var(--purple-light);
       border-color: var(--border-accent);
     }
-    .no-posts {
-      text-align: center;
-      padding: var(--space-7) 0;
-      color: var(--text-4);
-    }
-    .no-posts p { font-size: 1.1rem; margin-bottom: var(--space-3); }
-    .section-divider {
-      border: none;
-      border-top: 1px solid var(--border-1);
-      margin: var(--space-6) 0;
-    }
-    .posts-section-title {
+    .apps-section-title {
       font-family: 'Outfit', sans-serif;
       font-size: 1rem;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: var(--text-4);
-      margin-bottom: var(--space-4);
+      margin: var(--space-6) 0 var(--space-4);
+    }
+    .apps-section-title:first-of-type { margin-top: 0; }
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--border-1);
+      margin: var(--space-6) 0 var(--space-5);
     }
   </style>
   <!-- Google Consent Mode v2 defaults (must fire before GTM) -->
@@ -105,9 +83,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="index.html" class="logo" aria-label="Resonant Labs home">
         <svg class="logo-icon" width="32" height="28" viewBox="0 0 32 28" fill="none" aria-hidden="true">
           <path d="M2 14 C4 6,6 6,8 14 C10 22,12 22,14 14 C16 6,18 6,20 14 C22 22,24 22,26 14 C28 6,30 6,30 14"
-                stroke="url(#logoGradB)" stroke-width="2.5" stroke-linecap="round"/>
+                stroke="url(#logoGradA)" stroke-width="2.5" stroke-linecap="round"/>
           <defs>
-            <linearGradient id="logoGradB" x1="2" y1="0" x2="30" y2="0">
+            <linearGradient id="logoGradA" x1="2" y1="0" x2="30" y2="0">
               <stop offset="0%" stop-color="#8b5cf6"/>
               <stop offset="100%" stop-color="#22d3ee"/>
             </linearGradient>
@@ -116,8 +94,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         Resonant Labs
       </a>
       <div class="nav-links">
-        <a href="apps.html">Apps</a>
-        <a href="blog.html" class="active">Blog</a>
+        <a href="apps.html" class="active">Apps</a>
+        <a href="blog.html">Blog</a>
         <a href="index.html#about">About</a>
         <a href="https://github.com/sokiicz" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
@@ -137,36 +115,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a href="https://github.com/sokiicz" target="_blank" rel="noopener" class="btn btn-primary">GitHub</a>
   </div>
 
-  <!-- ======== BLOG HERO ======== -->
+  <!-- ======== HERO ======== -->
   <header class="blog-page-hero" style="padding-top: calc(var(--nav-h) + var(--space-6));">
     <div class="container">
-      <span class="badge badge-cyan" style="margin-bottom:16px; display:inline-flex;">The Journal</span>
-      <h1>Thoughts on building<br><span class="gradient-text">with AI</span></h1>
-      <p>Notes from the process — building without coding, thinking out loud about AI, and everything in between.</p>
+      <span class="badge badge-primary" style="margin-bottom:16px; display:inline-flex;">The Collection</span>
+      <h1>Apps built with<br><span class="gradient-text">pure imagination</span></h1>
+      <p>Every app here started as a conversation. No code written by hand — just ideas described to Claude Code, made real.</p>
     </div>
   </header>
 
-  <!-- ======== BLOG CONTENT ======== -->
-  <main class="blog-page-content">
+  <!-- ======== APPS CONTENT ======== -->
+  <main class="apps-page-content">
     <div class="container">
 
-      <!-- Category Filter -->
-      <div class="blog-categories" role="group" aria-label="Filter by category">
-        <button class="category-btn active" data-category="all">All Posts</button>
-        <button class="category-btn" data-category="thoughts">Thoughts</button>
-        <button class="category-btn" data-category="process">Process</button>
-        <button class="category-btn" data-category="build">Build</button>
-        <button class="category-btn" data-category="philosophy">Philosophy</button>
-      </div>
+      <!-- Tag Filter -->
+      <div class="apps-filter" id="apps-filter" role="group" aria-label="Filter by tag"></div>
 
-      <!-- Featured Post — most recent from site-data.js -->
-      <article class="featured-post fade-in" id="featured-post" aria-label="Featured post"></article>
+      <!-- Live Apps -->
+      <p class="apps-section-title">Live Apps</p>
+      <div class="apps-grid" id="apps-grid" aria-label="App gallery"></div>
 
-      <hr class="section-divider">
+      <hr class="section-divider" id="wip-divider" style="display:none;">
 
-      <!-- All Posts — rendered by main.js from site-data.js -->
-      <p class="posts-section-title">All Posts</p>
-      <div class="all-posts-grid" id="all-posts-grid"></div>
+      <!-- In Progress -->
+      <p class="apps-section-title" id="wip-title" style="display:none;">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="#fbbf24" aria-hidden="true" style="margin-right:6px;"><circle cx="12" cy="12" r="10"/></svg>
+        In Progress
+      </p>
+      <div class="apps-grid" id="wip-grid" aria-label="Apps in progress"></div>
+
     </div>
   </main>
 
@@ -175,14 +152,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="orb orb-1" aria-hidden="true"></div>
     <div class="orb orb-2" aria-hidden="true"></div>
     <div class="container cta-content">
-      <h2>Want to talk ideas?</h2>
-      <p>If you have thoughts about AI, creativity, or an app you'd love to see exist — I'm all ears.</p>
+      <h2>Got an idea?</h2>
+      <p>These apps exist because of a simple loop: idea → conversation → working app. Yours could be next.</p>
       <div class="cta-buttons">
         <a href="mailto:contactme@resonantlabs.online" class="btn btn-primary">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
-          Get in Touch
+          Send an Idea
         </a>
-        <a href="apps.html" class="btn btn-ghost">Explore the Apps</a>
+        <a href="blog.html" class="btn btn-ghost">Read the Journal</a>
       </div>
     </div>
   </section>
@@ -195,9 +172,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <a href="index.html" class="logo" aria-label="Resonant Labs home">
             <svg class="logo-icon" width="28" height="24" viewBox="0 0 32 28" fill="none" aria-hidden="true">
               <path d="M2 14 C4 6,6 6,8 14 C10 22,12 22,14 14 C16 6,18 6,20 14 C22 22,24 22,26 14 C28 6,30 6,30 14"
-                    stroke="url(#fLGB)" stroke-width="2.5" stroke-linecap="round"/>
+                    stroke="url(#fLGA)" stroke-width="2.5" stroke-linecap="round"/>
               <defs>
-                <linearGradient id="fLGB" x1="2" y1="0" x2="30" y2="0">
+                <linearGradient id="fLGA" x1="2" y1="0" x2="30" y2="0">
                   <stop offset="0%" stop-color="#8b5cf6"/>
                   <stop offset="100%" stop-color="#22d3ee"/>
                 </linearGradient>
@@ -234,62 +211,66 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <script src="js/site-data.js"></script>
   <script src="js/main.js"></script>
   <script>
-    // Render featured post from first (most recent) entry in SITE_DATA
+    // Build tag filter buttons from all app tags
     (function() {
-      const posts = window.SITE_DATA && window.SITE_DATA.posts;
-      if (!posts || !posts.length) return;
-      const p = posts[0];
-      const el = document.getElementById('featured-post');
-      if (!el) return;
-      el.dataset.category = (p.tag || '').toLowerCase();
-      el.innerHTML = `
-        <div class="featured-post-cover blog-card-cover-bg" style="background:linear-gradient(135deg,${p.gradientFrom},${p.gradientTo});opacity:0.85;position:relative;min-height:260px;">
-          <div style="position:absolute;top:20px;left:20px;">
-            <span class="featured-label">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              Latest
-            </span>
-          </div>
-        </div>
-        <div class="featured-post-body">
-          <div class="blog-meta">
-            <span class="badge ${p.tagClass}" style="font-size:0.75rem;">${p.tag}</span>
-            <span class="blog-meta-dot"></span>
-            <span>${p.date}</span>
-            <span class="blog-meta-dot"></span>
-            <span>${p.readTime}</span>
-          </div>
-          <h2><a href="${p.url}" style="color:inherit;">${p.title}</a></h2>
-          <p>${p.excerpt}</p>
-          <a href="${p.url}" class="btn btn-primary" style="align-self:flex-start;">
-            Read the full story
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </div>`;
-    })();
+      const apps = window.SITE_DATA && window.SITE_DATA.apps || [];
+      const tagSet = new Set();
+      apps.forEach(a => (a.tags || []).forEach(t => tagSet.add(t)));
+      const tags = Array.from(tagSet).sort();
 
-    function activateCategory(cat) {
-      cat = (cat || 'all').toLowerCase().trim();
-      document.querySelectorAll('.category-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.category === cat);
+      const filterEl = document.getElementById('apps-filter');
+      if (!filterEl) return;
+
+      const allBtn = document.createElement('button');
+      allBtn.className = 'apps-filter-btn active';
+      allBtn.dataset.tag = 'all';
+      allBtn.textContent = 'All';
+      filterEl.appendChild(allBtn);
+
+      tags.forEach(tag => {
+        const btn = document.createElement('button');
+        btn.className = 'apps-filter-btn';
+        btn.dataset.tag = tag.toLowerCase();
+        btn.textContent = tag;
+        filterEl.appendChild(btn);
       });
-      document.querySelectorAll('#all-posts-grid .blog-card').forEach(card => {
-        card.style.display = (cat === 'all' || (card.dataset.category || '') === cat) ? '' : 'none';
-      });
-      const featured = document.getElementById('featured-post');
-      if (featured) {
-        featured.style.display = (cat === 'all' || (featured.dataset.category || '') === cat) ? '' : 'none';
+
+      function applyFilter(tag) {
+        tag = tag.toLowerCase();
+        filterEl.querySelectorAll('.apps-filter-btn').forEach(b => {
+          b.classList.toggle('active', b.dataset.tag === tag);
+        });
+        document.querySelectorAll('#apps-grid .app-card, #wip-grid .app-card').forEach(card => {
+          const cardTags = (card.dataset.tags || '').split(',');
+          card.style.display = (tag === 'all' || cardTags.includes(tag)) ? '' : 'none';
+        });
+        // Show/hide WIP section headers based on visible WIP cards
+        const wipVisible = Array.from(document.querySelectorAll('#wip-grid .app-card'))
+          .some(c => c.style.display !== 'none');
+        document.getElementById('wip-divider').style.display = wipVisible ? '' : 'none';
+        document.getElementById('wip-title').style.display = wipVisible ? '' : 'none';
       }
-    }
 
-    document.querySelectorAll('.category-btn').forEach(btn => {
-      btn.addEventListener('click', () => activateCategory(btn.dataset.category));
-    });
+      filterEl.addEventListener('click', e => {
+        const btn = e.target.closest('.apps-filter-btn');
+        if (btn) applyFilter(btn.dataset.tag);
+      });
 
-    const params = new URLSearchParams(window.location.search);
-    activateCategory(params.get('category') || params.get('tag') || 'all');
+      // Show WIP divider/title if there are WIP apps
+      const wipCount = apps.filter(a => a.status === 'wip').length;
+      if (wipCount > 0) {
+        document.getElementById('wip-divider').style.display = '';
+        document.getElementById('wip-title').style.display = '';
+      }
+
+      // Support ?tag= in URL
+      const params = new URLSearchParams(window.location.search);
+      const urlTag = params.get('tag');
+      if (urlTag) applyFilter(urlTag);
+    })();
   </script>
   <script>window.__consentKitConfig={"version":"1.1","lang":"en","geo":{"showInGDPRCountries":true,"showInCCPAStates":true,"showGlobally":true},"banner":{"position":"center-popup","title":"Before you explore","description":"This site is free, open-source, and built entirely with AI. We use cookies to understand what works and to power things like comments. Nothing shady — you pick what you are okay with.","acceptAllLabel":"Accept All","rejectAllLabel":"Reject All","customizeLabel":"Let me choose","savePreferencesLabel":"Save my choices","privacyPolicyUrl":"privacy.html","primaryColor":"#13132e","accentColor":"#8b5cf6","textColor":"#f8fafc","borderRadius":"16px","logoUrl":""},"categories":[{"key":"necessary","label":"Necessary","description":"Core cookies that keep the site working — things like remembering your consent choice. Always on.","locked":true,"defaultEnabled":true},{"key":"analytics","label":"Analytics","description":"Help us understand which pages and apps get the most love. Data is anonymous — no personal profiles.","locked":false,"defaultEnabled":false},{"key":"marketing","label":"Marketing","description":"Not currently in use, but included for when we ever run campaigns. Won't be enabled without your say-so.","locked":false,"defaultEnabled":false},{"key":"functional","label":"Functional","description":"Powers the comment sections. Without this, you can read comments but won't be able to leave one.","locked":false,"defaultEnabled":false}],"consentLogging":{"enabled":false,"retentionDays":1825},"googleConsentMode":{"enabled":true,"defaultAdStorage":"denied","defaultAnalyticsStorage":"denied","defaultFunctionalityStorage":"denied","defaultPersonalizationStorage":"denied","defaultAdUserData":"denied","defaultSecurityStorage":"granted"},"ccpa":{"enabled":false,"doNotSellLinkText":"Do Not Sell or Share My Personal Information"}};</script>
   <script src="js/consentkit.js" defer></script>
+  <script src="js/chatbot.js"></script>
 </body>
 </html>

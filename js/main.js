@@ -11,7 +11,7 @@ document.documentElement.classList.add('js-ready');
    ============================================ */
 const APPS      = (window.SITE_DATA && window.SITE_DATA.apps) || [];
 const BLOG_POSTS = (window.SITE_DATA && window.SITE_DATA.posts) || [];
-const LIVE_APPS  = APPS.filter(a => a.status !== 'wip');
+const LIVE_APPS  = APPS.filter(a => a.status === 'live');
 const WIP_APPS   = APPS.filter(a => a.status === 'wip');
 
 /* ============================================
@@ -42,7 +42,7 @@ function renderAppCards(containerId) {
     const githubHref = app.githubUrl || '#';
 
     return `
-      <article class="app-card fade-in fade-in-delay-${delay}">
+      <article class="app-card fade-in fade-in-delay-${delay}" data-tags="${app.tags.map(t => t.toLowerCase()).join(',')}">
         <div class="app-card-preview">
           ${previewHtml}
         </div>
@@ -67,6 +67,70 @@ function renderAppCards(containerId) {
         </div>
       </article>`;
   }).join('');
+}
+
+/* ============================================
+   RENDER: ACTIVITY TICKER
+   ============================================ */
+function renderActivityTicker(containerId) {
+  const viewport = document.getElementById(containerId);
+  if (!viewport) return;
+
+  // Collect updates from public apps only, newest first
+  const all = [];
+  APPS.filter(a => a.status !== 'hidden').forEach(app => {
+    (app.updates || []).forEach(u => {
+      all.push({
+        date: u.date,
+        label: u.label || u.note,
+        name: app.name,
+        emoji: app.emoji,
+      });
+    });
+  });
+  all.sort((a, b) => b.date.localeCompare(a.date));
+  const recent = all.slice(0, 10);
+  if (!recent.length) {
+    viewport.closest('.ticker-strip')?.remove();
+    return;
+  }
+
+  // Duplicate for seamless infinite horizontal loop
+  const items = [...recent, ...recent];
+  const track = document.createElement('div');
+  track.className = 'ticker-track';
+  track.innerHTML = items.map(u => `
+    <span class="ticker-item">
+      <span class="ticker-emoji" aria-hidden="true">${u.emoji}</span>
+      <span class="ticker-app">${u.name}</span>
+      <span class="ticker-sep">—</span>
+      <span class="ticker-label">${u.label}</span>
+      <span class="ticker-date">${u.date}</span>
+    </span>`).join('');
+  viewport.appendChild(track);
+
+  // ~3s per item, min 20s
+  track.style.animationDuration = `${Math.max(recent.length * 5, 35)}s`;
+}
+
+/* ============================================
+   RENDER: APP CHANGELOG (sidebar)
+   ============================================ */
+function renderAppUpdateLog() {
+  document.querySelectorAll('[data-changelog-id]').forEach(el => {
+    const app = APPS.find(a => a.id === el.dataset.changelogId);
+    if (!app || !app.updates || !app.updates.length) return;
+    const updates = [...app.updates].reverse();
+    el.innerHTML = `
+      <h4 class="sidebar-card-title">Changelog</h4>
+      <ul class="app-update-list">
+        ${updates.map(u => `
+          <li class="app-update-entry">
+            <span class="app-update-date">${u.date}</span>
+            <span class="app-update-text">${u.note}</span>
+          </li>`).join('')}
+      </ul>`;
+  });
 }
 
 /* ============================================
@@ -108,7 +172,7 @@ function renderWipSection(containerId) {
     const githubHref  = app.githubUrl || '#';
 
     return `
-      <article class="app-card fade-in fade-in-delay-${delay}">
+      <article class="app-card fade-in fade-in-delay-${delay}" data-tags="${app.tags.map(t => t.toLowerCase()).join(',')}">
         <div class="app-card-preview">
           ${previewHtml}
           <span class="wip-card-badge">In Progress</span>
@@ -536,8 +600,10 @@ function initBgAmbient() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  renderActivityTicker('activity-ticker');
   renderAppCards('apps-grid');
   renderWipSection('wip-grid');
+  renderAppUpdateLog();
   renderBlogPreview('blog-preview-grid');
   renderBlogAll('all-posts-grid');
   initNav();
