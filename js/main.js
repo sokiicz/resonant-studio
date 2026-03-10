@@ -137,9 +137,6 @@ function renderAppUpdateLog() {
    RENDER: WIP SECTION
    ============================================ */
 function renderWipSection(containerId) {
-  const section = document.getElementById('in-progress');
-  if (!section) return;
-
   if (WIP_APPS.length === 0) {
     section.style.display = 'none';
     return;
@@ -599,8 +596,25 @@ function initBgAmbient() {
   });
 }
 
+function populateDynamicStats() {
+  // Apps in progress
+  const inProgressEl = document.getElementById('stat-in-progress');
+  if (inProgressEl) inProgressEl.textContent = WIP_APPS.length;
+
+  // Apps with any update in the last 7 days
+  const releasedEl = document.getElementById('stat-released-week');
+  if (releasedEl) {
+    const cutoff = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
+    const count = LIVE_APPS.filter(app =>
+      (app.updates || []).some(u => new Date(u.date) >= cutoff)
+    ).length;
+    releasedEl.textContent = count;
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   renderActivityTicker('activity-ticker');
+  populateDynamicStats();
   renderAppCards('apps-grid');
   renderWipSection('wip-grid');
   renderAppUpdateLog();
