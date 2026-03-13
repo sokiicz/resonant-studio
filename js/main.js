@@ -11,7 +11,7 @@ document.documentElement.classList.add('js-ready');
    ============================================ */
 const APPS      = (window.SITE_DATA && window.SITE_DATA.apps) || [];
 const BLOG_POSTS = (window.SITE_DATA && window.SITE_DATA.posts) || [];
-const LIVE_APPS  = APPS.filter(a => a.status === 'live');
+const LIVE_APPS  = APPS.filter(a => a.status === 'live').sort((a, b) => new Date(b.releaseDate) - new Date(a.releaseDate));
 const WIP_APPS   = APPS.filter(a => a.status === 'wip');
 
 /* ============================================
