@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RPS Battle — Resonant Labs</title>
+  <meta name="description" content="A real-time multiplayer Rock Paper Scissors arena game with virtual coins — built to prove that the thrill of betting never needs to cost you anything real.">
+  <link rel="stylesheet" href="../css/style.css">
+  <script>document.documentElement.classList.add('js-ready');</script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M2 16 C4 8,6 8,8 16 C10 24,12 24,14 16 C16 8,18 8,20 16 C22 24,24 24,26 16 C28 8,30 8,30 16' stroke='%238b5cf6' stroke-width='2.5' stroke-linecap='round' fill='none'/></svg>">
+  <style>:root{--app-from:#6366f1;--app-to:#f43f5e;}</style>
+  <!-- Google Consent Mode v2 defaults (must fire before GTM) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage:              'denied',
+      ad_user_data:            'denied',
+      ad_personalization:      'denied',
+      analytics_storage:       'denied',
+      functionality_storage:   'denied',
+      personalization_storage: 'denied',
+      wait_for_update: 2000
+    });
+  </script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T9635SSK');</script>
+  <!-- End Google Tag Manager -->
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T9635SSK"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="logo">
+        <svg class="logo-icon" width="32" height="28" viewBox="0 0 32 28" fill="none">
+          <path d="M2 14 C4 6,6 6,8 14 C10 22,12 22,14 14 C16 6,18 6,20 14 C22 22,24 22,26 14 C28 6,30 6,30 14" stroke="url(#rlg)" stroke-width="2.5" stroke-linecap="round"/>
+          <defs><linearGradient id="rlg" x1="2" y1="0" x2="30" y2="0"><stop offset="0%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#22d3ee"/></linearGradient></defs>
+        </svg>
+        Resonant Labs
+      </a>
+      <div class="nav-links">
+        <a href="../apps.html">Apps</a>
+        <a href="../blog.html">Blog</a>
+        <a href="../index.html#about">About</a>
+        <a href="https://github.com/sokiicz" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          GitHub
+        </a>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-menu">
+    <a href="../apps.html">Apps</a>
+    <a href="../blog.html">Blog</a>
+    <a href="../index.html#about">About</a>
+  </div>
+
+  <header class="app-detail-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../index.html">Home</a><span class="breadcrumb-sep">›</span>
+        <a href="../apps.html">Apps</a><span class="breadcrumb-sep">›</span>
+        <span>RPS Battle</span>
+      </nav>
+      <div class="app-hero-grid">
+        <div class="app-hero-info fade-in">
+          <span class="badge badge-primary" style="margin-bottom:20px;">Game · Multiplayer · Real-time · No Real Money</span>
+          <h1>RPS Battle</h1>
+          <p class="app-hero-tagline">A real-time multiplayer arena where 30 minions fight for dominance — Rock, Paper, Scissors, last team standing wins. Virtual coins only. Always.</p>
+          <div class="app-hero-actions">
+            <a href="https://rps-battle-5486e.web.app" target="_blank" rel="noopener" class="btn btn-primary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Play Now
+            </a>
+          </div>
+          <div class="app-hero-meta">
+            <span class="app-hero-meta-item">🗓️ 12 Mar 2026</span>
+            <span class="app-hero-meta-item">🤖 Built with Claude Code</span>
+            <span class="app-hero-meta-item">⚡ Node.js · React · Socket.IO</span>
+          </div>
+        </div>
+        <div class="app-preview-container fade-in fade-in-delay-2">
+          <img src="../Media/RPS-Battle.png" alt="RPS Battle arena — singleplayer mode in progress" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="app-tabs-section">
+    <div class="container">
+      <div class="app-detail-layout">
+      <div>
+      <div class="tabs-nav">
+        <button class="tab-btn active" data-tab="rps-overview">Overview</button>
+        <button class="tab-btn" data-tab="rps-message">The Message</button>
+        <button class="tab-btn" data-tab="rps-built">How It Was Built</button>
+        <button class="tab-btn" data-tab="rps-tech">Tech Stack</button>
+      </div>
+
+      <!-- Overview Tab -->
+      <div class="tab-pane active" id="rps-overview">
+        <div class="content-prose fade-in">
+          <h3>The arena</h3>
+          <p>Three teams. Thirty minions. One arena. Rock beats Scissors, Scissors beats Paper, Paper beats Rock — and when two minions collide, the loser converts to the winner's team on the spot. The last colour standing wins.</p>
+          <p>It sounds simple. Watching it happen in real time is genuinely chaotic. A team that looks dominant at the 90-second mark can collapse in seconds as a single chain reaction sweeps the board. Nobody controls the minions — they bounce around the arena at constant velocity, physics-accurate, 20 times per second.</p>
+
+          <h3>How to play</h3>
+          <ul>
+            <li><strong>Pick a team</strong> — Rock 🪨, Paper 📄, or Scissors ✂️. Or let the game pick for you with Random.</li>
+            <li><strong>Place a bet</strong> — wager some of your virtual coins (you start with 1,000).</li>
+            <li><strong>Wait for two more players</strong> — one per team. The match starts automatically when all three slots fill.</li>
+            <li><strong>Watch and hope</strong> — your minions are on their own. Sit back, enjoy the chaos.</li>
+            <li><strong>Win the pot</strong> — the winner takes all three players' bets. Lose and your coins are gone — until the next match.</li>
+          </ul>
+
+          <h3>Singleplayer mode</h3>
+          <p>Not feeling social? Jump into a solo match against two AI opponents. No queue, instant start. Win and your bet is tripled. It's a good way to learn the game or just unwind.</p>
+
+          <h3>Exactly one third</h3>
+          <p>Each team has a mathematically identical chance of winning — 33.3%. The initial placement is grid-based and interleaved so no team starts with a positional advantage. The rules are perfectly symmetric. Movement is random. The simulation was run 2,000 times to verify: Rock 33.4%, Paper 33.3%, Scissors 33.3%.</p>
+          <p>No strategy. No skill gap. Pure chaos. That's the point.</p>
+
+          <h3>Source code is private — intentionally</h3>
+          <p>Most projects on this site are open source. RPS Battle is not, and that decision was deliberate. A complete, working, real-time multiplayer betting game published openly is a recipe for someone to fork it, add a payment processor, and launch a real gambling product. That's not something I'm willing to contribute to. The game itself is free to play — the code stays private.</p>
+        </div>
+      </div>
+
+      <!-- The Message Tab -->
+      <div class="tab-pane" id="rps-message">
+        <div class="content-prose fade-in">
+          <h3>Why this game exists</h3>
+          <p>This one came from a specific concern. Gambling — real gambling, with real money — is a serious public health problem. It's designed to be addictive. The house always wins. And unlike most addictions, it can destroy a person financially before anyone around them notices something is wrong.</p>
+          <p>I've seen what it does. I don't like gambling. I don't think we need more of it in the world.</p>
+
+          <blockquote>"The thrill of betting can be enjoyed without risking anything real — because real gambling can be addictive and ruin lives."</blockquote>
+
+          <h3>The experiment</h3>
+          <p>So I built an experiment: what if you could have all of that dopamine — the anticipation, the risk, the win, the loss, the urge to play again — without any of the actual danger?</p>
+          <p>Every coin in RPS Battle is virtual. You can't buy more. You can't cash out. They have no value outside the game. You start with 1,000. If you lose them all, you're out until the admin tops you up — and there's no mechanism to pay to refill them. The closest thing to a "house" is the game engine itself, and it gives every team exactly a 33.3% shot.</p>
+          <p>What surprised me is that it's still fun. The same anxiety before a match starts. The same sting of losing your stack. The same impulse to hit "Play Again." All of it, with nothing real at stake.</p>
+
+          <h3>A wake-up call in the form of a game</h3>
+          <p>If you play this and find yourself feeling the pull — the urge to bet bigger, the frustration after a loss, the compulsion to keep going — pay attention to that feeling. That's what real gambling exploits. The game is designed to show you that the feeling exists, not to profit from it.</p>
+          <p>Gambling is a serious matter. It can be addictive. It has the power to damage your finances, your relationships, and your mental health in ways that are hard to reverse. If you or someone you know struggles with it, please reach out for help. There are free resources in almost every country.</p>
+          <p>This game is just for fun. Keep it that way.</p>
+        </div>
+      </div>
+
+      <!-- How It Was Built Tab -->
+      <div class="tab-pane" id="rps-built">
+        <div class="content-prose fade-in">
+          <h3>Described in conversation</h3>
+          <p>The brief was: a multiplayer browser game, three teams, betting with virtual coins, real-time physics. Something that felt alive. The kind of thing where you genuinely can't predict who will win.</p>
+          <p>The first version had a basic physics engine, flat design, and no real game feel. It worked, but it didn't have the chaos that made RPS actually interesting at scale. So the physics got rebuilt — constant velocity, elastic collisions, three collision passes per tick, conversion on every touch. No cooldowns, no seeking behaviour, pure random motion.</p>
+
+          <h3>Getting fairness right</h3>
+          <p>Proving that each team has a genuine 1/3 chance took more than intuition. A headless simulation script was written to run 1,000 games without rendering anything — just pure physics — and report win rates. The first version came back: Rock 31%, Paper 36%, Scissors 32%. Not good enough. The initial placement algorithm was reworked until the simulation returned numbers close to 33.3% across 2,000 games. Then the engine was locked.</p>
+
+          <h3>The real challenge: matchmaking</h3>
+          <p>Real-time multiplayer is unforgiving. One socket disconnect in the wrong moment and the game state corrupts. A player clicking "Play Again" too fast could spawn a second physics engine running alongside the first. Every edge case had to be found and closed — socket cleanup before game start, engine stop on disconnect, authoritative server state with client-side interpolation for smooth 60fps rendering from a 20fps server tick.</p>
+
+          <blockquote>"The matchmaker is a singleton. The engine is deterministic. The client interpolates. Between those three facts, everything else follows."</blockquote>
+
+          <h3>Why the source stays private</h3>
+          <p>The decision not to open-source this one was made early and held to. A working real-time multiplayer betting engine is genuinely dangerous in the wrong hands — not because of what it does, but because of what it could be turned into. The game is free to play for everyone. The blueprint stays in a drawer.</p>
+        </div>
+      </div>
+
+      <!-- Tech Stack Tab -->
+      <div class="tab-pane" id="rps-tech">
+        <div class="content-prose fade-in">
+          <div class="tech-stack-grid">
+            <div class="tech-item"><span class="tech-icon">⚛️</span>React 19</div>
+            <div class="tech-item"><span class="tech-icon">🔷</span>TypeScript</div>
+            <div class="tech-item"><span class="tech-icon">⚡</span>Vite</div>
+            <div class="tech-item"><span class="tech-icon">💨</span>Tailwind CSS v4</div>
+            <div class="tech-item"><span class="tech-icon">🔌</span>Socket.IO</div>
+            <div class="tech-item"><span class="tech-icon">🐻</span>Zustand</div>
+            <div class="tech-item"><span class="tech-icon">🚂</span>Node.js + Express</div>
+            <div class="tech-item"><span class="tech-icon">🗄️</span>SQLite (better-sqlite3)</div>
+            <div class="tech-item"><span class="tech-icon">🔑</span>JWT Auth</div>
+            <div class="tech-item"><span class="tech-icon">🎮</span>Canvas API</div>
+            <div class="tech-item"><span class="tech-icon">🔊</span>ElevenLabs AI SFX</div>
+            <div class="tech-item"><span class="tech-icon">🤖</span>Claude Code</div>
+          </div>
+
+          <h3 style="margin-top:var(--space-4);">Architecture</h3>
+          <p>The game runs on a monorepo with two packages — a React client and a Node.js server. The server is the authority: it runs the physics engine at 20fps, handles all coin accounting, and manages the matchmaking queue. The client receives tick data and interpolates positions between frames for smooth 60fps animation on canvas.</p>
+          <p>The physics engine uses elastic collision detection with three resolution passes per tick to handle chained overlaps, and RPS conversion fires on the first pass only — preventing a freshly converted minion from being immediately re-converted in the same tick.</p>
+
+          <h3>Hosting</h3>
+          <ul>
+            <li><strong>Frontend</strong> — Firebase Hosting (free tier, global CDN)</li>
+            <li><strong>Backend</strong> — Google Cloud Run (Docker container, min-instances 1 to keep the DB warm)</li>
+            <li><strong>Database</strong> — SQLite file inside the container (resets on redeploy)</li>
+          </ul>
+
+          <p style="margin-top:var(--space-3);">Sound effects were generated using the ElevenLabs Sound Generation API — battle horn, conversion sparkle, victory fanfare, defeat sting, and coin clink. All AI-generated, all fitting for a 2-second briefing.</p>
+        </div>
+      </div>
+
+      </div><!-- end main -->
+      <aside class="article-sidebar" aria-label="App sidebar">
+        <div class="sidebar-card">
+          <div class="author-card">
+            <div class="author-avatar" aria-hidden="true">👋</div>
+            <div class="author-name">Resonant Labs</div>
+            <div class="author-bio">A digital marketer building apps through AI conversation. All ideas, no code.</div>
+            <a href="mailto:contactme@resonantlabs.online?subject=RPS%20Battle" style="font-size:0.82rem; color:var(--purple-light); font-weight:600;">Send feedback →</a>
+          </div>
+        </div>
+
+        <div class="sidebar-card" style="background: rgba(244,63,94,0.06); border-color: rgba(244,63,94,0.2);">
+          <h4 style="color: #f87171; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px;">A note on gambling</h4>
+          <p style="font-size:0.82rem; color:var(--text-3); line-height:1.65; margin:0;">All coins are virtual. No real money, no purchases, no cashouts. Real gambling can be addictive and ruin lives. If you or someone you know is struggling, please seek help.</p>
+        </div>
+
+        <div class="sidebar-card" data-changelog-id="rps-battle"></div>
+
+        <div class="sidebar-card" style="background: var(--purple-dim); border-color: rgba(139,92,246,0.25);">
+          <h4 style="color:var(--purple-light);">Build your own app</h4>
+          <p style="font-size:0.85rem; color:var(--text-3); margin-bottom:12px; line-height:1.6;">You don't need to code. Just describe what you want and let Claude Code build it.</p>
+          <a href="https://claude.ai/code" target="_blank" rel="noopener" class="btn btn-primary btn-sm" style="width:100%; justify-content:center;">Try Claude Code →</a>
+        </div>
+      </aside>
+      </div><!-- end app-detail-layout -->
+    </div>
+  </section>
+
+  <section class="comments-section">
+    <div class="container">
+      <h3>Got thoughts?</h3>
+      <p class="comments-intro">Played a match? Have a reaction to the anti-gambling angle? Drop it here — no account needed, just a name and a message.</p>
+      <div id="cusdis_thread"
+           data-host="https://cusdis.com"
+           data-app-id="28a85f51-4564-4fc1-bb33-5dd218c38b0e"
+           data-page-id="rps-battle"
+           data-theme="dark">
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="logo">
+            <svg class="logo-icon" width="28" height="24" viewBox="0 0 32 28" fill="none">
+              <path d="M2 14 C4 6,6 6,8 14 C10 22,12 22,14 14 C16 6,18 6,20 14 C22 22,24 22,26 14 C28 6,30 6,30 14" stroke="url(#flgr)" stroke-width="2.5" stroke-linecap="round"/>
+              <defs><linearGradient id="flgr" x1="2" y1="0" x2="30" y2="0"><stop offset="0%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#22d3ee"/></linearGradient></defs>
+            </svg>
+            Resonant Labs
+          </a>
+          <p>AI-built apps, freely shared.</p>
+        </div>
+        <div class="footer-col"><h4>Explore</h4><ul><li><a href="../apps.html">All Apps</a></li><li><a href="../blog.html">Blog</a></li><li><a href="../index.html#about">About</a></li></ul></div>
+        <div class="footer-col"><h4>Connect</h4><ul><li><a href="https://github.com/sokiicz" target="_blank" rel="noopener">GitHub</a></li><li><a href="mailto:contactme@resonantlabs.online">Email</a></li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-built-with">Built entirely with <span>Claude Code</span></div>
+        <span>© 2026 Resonant Labs</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/site-data.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/chatbot.js"></script>
+  <script>window.__consentKitConfig={"version":"1.1","lang":"en","geo":{"showInGDPRCountries":true,"showInCCPAStates":true,"showGlobally":true},"banner":{"position":"center-popup","title":"Before you explore","description":"This site is free, open-source, and built entirely with AI. We use cookies to understand what works and to power things like comments. Nothing shady — you pick what you are okay with.","acceptAllLabel":"Accept All","rejectAllLabel":"Reject All","customizeLabel":"Let me choose","savePreferencesLabel":"Save my choices","privacyPolicyUrl":"../privacy.html","primaryColor":"#13132e","accentColor":"#8b5cf6","textColor":"#f8fafc","borderRadius":"16px","logoUrl":""},"categories":[{"key":"necessary","label":"Necessary","description":"Core cookies that keep the site working — things like remembering your consent choice. Always on.","locked":true,"defaultEnabled":true},{"key":"analytics","label":"Analytics","description":"Help us understand which pages and apps get the most love. Data is anonymous — no personal profiles.","locked":false,"defaultEnabled":false},{"key":"marketing","label":"Marketing","description":"Not currently in use, but included for when we ever run campaigns. Won't be enabled without your say-so.","locked":false,"defaultEnabled":false},{"key":"functional","label":"Functional","description":"Powers the comment sections. Without this, you can read comments but won't be able to leave one.","locked":false,"defaultEnabled":false}],"consentLogging":{"enabled":false,"retentionDays":1825},"googleConsentMode":{"enabled":true,"defaultAdStorage":"denied","defaultAnalyticsStorage":"denied","defaultFunctionalityStorage":"denied","defaultPersonalizationStorage":"denied","defaultAdUserData":"denied","defaultSecurityStorage":"granted"},"ccpa":{"enabled":false,"doNotSellLinkText":"Do Not Sell or Share My Personal Information"}};</script>
+  <script src="../js/consentkit.js" defer></script>
+</body>
+</html>

@@ -87,7 +87,7 @@ window.SITE_DATA = {
       tags: ['Game', 'Multiplayer', 'Real-time', 'WebSockets'],
       emoji: '⚔️',
       status: 'live',
-      image: null,
+      image: 'Media/RPS-Battle.png',
       gradientFrom: '#6366f1',
       gradientTo: '#f43f5e',
       githubUrl: null,
